@@ -14,6 +14,9 @@ function SubNavbar() {
         <li><a href=""><img src="../img/LEC_Logo.svg" />LEC</a></li>
         <li><a href=""><img src="../img/LCS_Logo.svg" />LCS</a></li>
       </ul>
+      <ul className="minor">
+        <li><a href=""></a></li>
+      </ul>
     </div>
   );
 }
