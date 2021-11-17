@@ -1,8 +1,12 @@
 import React from 'react';
+import styled from 'styled-components';
 
+let Navbar = styled.div`
+  background-color: black;
+`;
 function NavbarMain() {
   return (
-    <div className="navbar-main">
+    <Navbar className="navbar-main">
       <div className="title">
         <img src="img/Logo.svg" />
         <span>ZIGGS.GG</span>
@@ -47,7 +51,7 @@ function NavbarMain() {
           </a>
         </li>
       </ul>
-    </div>
+    </Navbar>
   );
 }
 
