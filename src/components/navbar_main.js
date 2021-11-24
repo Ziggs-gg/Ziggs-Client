@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 let Navbar_container = styled.div`
@@ -15,12 +15,17 @@ let Title = styled.div`
   padding-top: 20px;
 `;
 let Title_text = styled.span`
+  padding-top: 5px;
+  height: 100%;
   font-size: 22px;
   font-family: Noto Sans KR;
   font-weight: 900;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 `;
 let Logo = styled.img`
   margin-right: 0.5rem;
+  width: 32px;
+  height: 32px;
 `;
 let Search_bar_container = styled.div`
   background-color: #363634;
@@ -28,13 +33,13 @@ let Search_bar_container = styled.div`
   width: 216px;
   height: 29px;
   border-radius: 20px;
-  margin-top: 20px;
+  margin-top: 30px;
 `;
 let Search_bar_form = styled.form``;
 let Search_bar = styled.div`
   display: flex;
   justify-content: center;
-  margin-top: 6px;
+  margin-top: 5px;
 `;
 let Search_bar_input = styled.input`
   background: none;
@@ -72,6 +77,9 @@ let List_item = styled.li`
   align-items: flex-end;
   padding: 0px;
   margin-bottom: 40px;
+  :hover {
+    color: red;
+  }
 `;
 let List_item_text = styled.span`
   font-size: 18px;
@@ -80,6 +88,8 @@ let List_item_text = styled.span`
   font-weight: 500;
 `;
 function NavbarMain() {
+  let [toggleNavbar, settoggleNavbar] = useState(false);
+
   return (
     <Navbar_container>
       <Title>
