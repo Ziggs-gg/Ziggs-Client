@@ -6,6 +6,8 @@ let Navbar = styled.div`
   display: flex;
 `;
 let Navbar_container = styled.div`
+  margin: 0;
+  position: fixed;
   background-color: #2b2b28;
   width: 260px;
   height: 100vh;
@@ -96,7 +98,7 @@ let Subnavbar1 = styled.div`
   width: 260px;
   height: 100vh;
   background-color: red;
-
+  margin-left: 260px;
   color: white;
   text-align: center;
 `;
@@ -104,7 +106,7 @@ let Subnavbar2 = styled.div`
   width: 260px;
   height: 100vh;
   background-color: green;
-
+  margin-left: 260px;
   color: white;
   text-align: center;
 `;
@@ -112,7 +114,7 @@ let Subnavbar3 = styled.div`
   width: 260px;
   height: 100vh;
   background-color: wheat;
-
+  margin-left: 260px;
   color: white;
   text-align: center;
 `;
@@ -120,7 +122,7 @@ let Subnavbar4 = styled.div`
   width: 260px;
   height: 100vh;
   background-color: blue;
-
+  margin-left: 260px;
   color: white;
   text-align: center;
 `;
