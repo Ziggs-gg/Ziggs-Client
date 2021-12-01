@@ -1,8 +1,14 @@
-div {
-  background-color: #131310;
-  color: white;
+li {
+  list-style: none;
 }
-
-.APP {
+a {
   color: white;
+  text-decoration: none;
+}
+.Search_bar_container {
+  background-color: #363634;
+  width: 216px;
+  height: 29px;
+  border-radius: 20px;
+  left: 22px;
 }
