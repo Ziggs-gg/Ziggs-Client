@@ -7,7 +7,7 @@ function SubNavbar(props) {
     background: #131310;
     height: 100%;
     width: 297px;
-    margin-left: 260px;
+    //margin-left: 260px;
   `;
 
   let Maintitle = styled.div`
@@ -67,9 +67,10 @@ function SubNavbar(props) {
       <Maintitle>
         <img src="../img/vector_17.svg" />
         <Title>리그보기</Title>
-        <Close onClick={() => {
-          props.setmodalLeague(false);
-        }}>
+        <Close
+          onClick={() => {
+            props.setmodalLeague(false);
+          }}>
           <img src="../img/vector_36.svg" />
         </Close>
       </Maintitle>

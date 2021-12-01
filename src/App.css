@@ -12,3 +12,10 @@ a {
   border-radius: 20px;
   left: 22px;
 }
+.test {
+  color: white;
+}
+.App {
+  display: flex;
+  flex-direction: row;
+}
