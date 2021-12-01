@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import SubNavbar from './SubNavbar'
 let Navbar = styled.div`
   width: 520px;
   display: flex;
@@ -156,7 +157,7 @@ function NavbarMain() {
       </Navbar_container>
       {modalMatch == true ? <Subnavbar /> : null}
       {modalStats == true ? <Subnavbar /> : null}
-      {modalLeague == true ? <Subnavbar /> : null}
+      {modalLeague == true ? <SubNavbar /> : null}
       {modalTeam == true ? <Subnavbar /> : null}
       {modalPlayer == true ? <Subnavbar /> : null}
     </Navbar>
