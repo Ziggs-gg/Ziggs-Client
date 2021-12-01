@@ -2,7 +2,7 @@ import React from 'react';
 import '../App.css';
 import styled from 'styled-components';
 
-function SubNavbar() {
+function SubNavbar(props) {
   let Contain = styled.div`
     background: #131310;
     height: 100%;
@@ -23,7 +23,7 @@ function SubNavbar() {
   `;
 
   let Close = styled.button`
-    background: black;
+    background: #131310;
     margin-top: 10px;
     margin-left: 132px;
     padding: 10px;
@@ -67,7 +67,9 @@ function SubNavbar() {
       <Maintitle>
         <img src="../img/vector_17.svg" />
         <Title>리그보기</Title>
-        <Close>
+        <Close onClick={() => {
+          props.setmodalLeague(false);
+        }}>
           <img src="../img/vector_36.svg" />
         </Close>
       </Maintitle>

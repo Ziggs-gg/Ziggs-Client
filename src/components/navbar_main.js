@@ -218,7 +218,7 @@ function NavbarMain() {
       </Navbar_container>
       {modalMatch == true ? <Subnavbar1 /> : null}
       {modalStats == true ? <Subnavbar2 /> : null}
-      {modalLeague == true ? <SubNavbar /> : null}
+      {modalLeague == true ? <SubNavbar setmodalLeague={setmodalLeague}/> : null}
       {modalTeam == true ? <Subnavbar3 /> : null}
       {modalPlayer == true ? <Subnavbar4 /> : null}
     </Navbar>
