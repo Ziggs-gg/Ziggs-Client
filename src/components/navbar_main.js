@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import SubNavbar from './SubNavbar';
 let Navbar = styled.div`
-  width: 520px;
   display: flex;
 `;
 let Navbar_container = styled.div`
+  position: --webkit-sticky;
+  position: sticky;
+  top: 0;
   background-color: #2b2b28;
   width: 260px;
   height: 100vh;
@@ -92,10 +95,34 @@ let List_item_text = styled.span`
   font-weight: 500;
 `;
 
-let Subnavbar = styled.div`
+let Subnavbar1 = styled.div`
   width: 260px;
   height: 100vh;
-  background-color: gray;
+  background-color: red;
+
+  color: white;
+  text-align: center;
+`;
+let Subnavbar2 = styled.div`
+  width: 260px;
+  height: 100vh;
+  background-color: green;
+
+  color: white;
+  text-align: center;
+`;
+let Subnavbar3 = styled.div`
+  width: 260px;
+  height: 100vh;
+  background-color: wheat;
+
+  color: white;
+  text-align: center;
+`;
+let Subnavbar4 = styled.div`
+  width: 260px;
+  height: 100vh;
+  background-color: blue;
 
   color: white;
   text-align: center;
@@ -124,42 +151,77 @@ function NavbarMain() {
         </Search_bar_container>
         <List>
           <a href="#">
-            <List_item onClick={() => setmodalMatch(!modalMatch)}>
+            <List_item
+              onClick={() => {
+                setmodalMatch(!modalMatch);
+                setmodalLeague(false);
+                setmodalPlayer(false);
+                setmodalTeam(false);
+                setmodalStats(false);
+              }}>
               <img src="img/Schedule.svg" />
               <List_item_text>경기일정</List_item_text>
             </List_item>
           </a>
           <a href="#">
-            <List_item onClick={() => setmodalStats(!modalStats)}>
+            <List_item
+              onClick={() => {
+                setmodalStats(!modalStats);
+                setmodalLeague(false);
+                setmodalPlayer(false);
+                setmodalTeam(false);
+                setmodalMatch(false);
+              }}>
               <img src="img/Stat_Comparisons.svg" />
               <List_item_text>통계비교</List_item_text>
             </List_item>
           </a>
           <a href="#">
-            <List_item onClick={() => setmodalLeague(!modalLeague)}>
+            <List_item
+              onClick={() => {
+                setmodalLeague(!modalLeague);
+                setmodalMatch(false);
+                setmodalPlayer(false);
+                setmodalTeam(false);
+                setmodalStats(false);
+              }}>
               <img src="img/Leagues.svg" />
               <List_item_text>리그보기</List_item_text>
             </List_item>
           </a>
           <a href="#">
-            <List_item onClick={() => setmodalTeam(!modalTeam)}>
+            <List_item
+              onClick={() => {
+                setmodalTeam(!modalTeam);
+                setmodalLeague(false);
+                setmodalPlayer(false);
+                setmodalMatch(false);
+                setmodalStats(false);
+              }}>
               <img src="img/Teams.svg" />
               <List_item_text>구단보기</List_item_text>
             </List_item>
           </a>
           <a href="#">
-            <List_item onClick={() => setmodalPlayer(!modalPlayer)}>
+            <List_item
+              onClick={() => {
+                setmodalPlayer(!modalPlayer);
+                setmodalLeague(false);
+                setmodalTeam(false);
+                setmodalMatch(false);
+                setmodalStats(false);
+              }}>
               <img src="img/Players.svg" />
               <List_item_text>선수보기</List_item_text>
             </List_item>
           </a>
         </List>
       </Navbar_container>
-      {modalMatch == true ? <Subnavbar /> : null}
-      {modalStats == true ? <Subnavbar /> : null}
-      {modalLeague == true ? <Subnavbar /> : null}
-      {modalTeam == true ? <Subnavbar /> : null}
-      {modalPlayer == true ? <Subnavbar /> : null}
+      {modalMatch == true ? <Subnavbar1 /> : null}
+      {modalStats == true ? <Subnavbar2 /> : null}
+      {modalLeague == true ? <SubNavbar setmodalLeague={setmodalLeague} /> : null}
+      {modalTeam == true ? <Subnavbar3 /> : null}
+      {modalPlayer == true ? <Subnavbar4 /> : null}
     </Navbar>
   );
 }
