@@ -80,7 +80,6 @@ let List_item = styled.li`
   align-items: flex-end;
   width: 100%;
   padding: 0px;
-  padding-left: 4px;
   margin-top: 40px;
   margin-bottom: 40px;
   :hover {

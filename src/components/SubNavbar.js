@@ -5,9 +5,9 @@ import styled from 'styled-components';
 function SubNavbar(props) {
   let Contain = styled.div`
     background: #131310;
-    height: 100%;
+    height: 100vh;
     width: 297px;
-    //margin-left: 260px;
+    overflow: scroll;
   `;
 
   let Maintitle = styled.div`
