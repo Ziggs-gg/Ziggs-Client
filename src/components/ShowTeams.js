@@ -6,7 +6,10 @@ function ShowTeams() {
     background: #131310;
     height: 100vh;
     width: 297px;
-    overflow: scroll;
+    overflow-y: scroll;
+    ::-webkit-scrollbar {
+      display: none;
+    }
   `;
   let Maintitle = styled.div`
     display: flex;
