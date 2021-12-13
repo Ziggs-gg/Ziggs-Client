@@ -7,12 +7,20 @@ function SubNavbar(props) {
     background: #131310;
     height: 100vh;
     width: 297px;
-    overflow: scroll;
+    overflow-y: scroll;
+    ::-webkit-scrollbar {
+      display: none;
+    }
   `;
-
+  let Image = styled.div`
+    display: flex;
+    align-items: center;
+    width: 24px;
+    height: auto;
+  `;
   let Maintitle = styled.div`
     display: flex;
-    padding: 20px 0 0 25px;
+    padding: 5px 0 0 25px;
     color: #ffffff;
     font-size: 18px;
     font-weight: 500;
@@ -34,7 +42,7 @@ function SubNavbar(props) {
   `;
 
   let Leaguetitle = styled.div`
-    margin: 40px 10px auto 26px;
+    margin: 20px 10px auto 26px;
     color: #ffffff;
     font-size: 16px;
     font-weight: 500;
@@ -65,7 +73,9 @@ function SubNavbar(props) {
   return (
     <Contain>
       <Maintitle>
-        <img src="../img/vector_17.svg" />
+        <Image>
+          <img src="../img/vector_17.svg" />
+        </Image>
         <Title>리그보기</Title>
         <Close
           onClick={() => {
