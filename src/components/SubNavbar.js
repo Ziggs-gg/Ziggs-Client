@@ -11,12 +11,15 @@ function SubNavbar(props) {
     ::-webkit-scrollbar {
       display: none;
     }
+<<<<<<< HEAD
   `;
   let Image = styled.div`
     display: flex;
     align-items: center;
     width: 24px;
     height: auto;
+=======
+>>>>>>> da0974eaccf276da442fd8b0bf93f05daa2b1c6a
   `;
   let Maintitle = styled.div`
     display: flex;
