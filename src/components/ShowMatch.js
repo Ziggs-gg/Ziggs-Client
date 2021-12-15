@@ -2,16 +2,7 @@ import React from 'react';
 import '../App.css';
 import styled from 'styled-components';
 
-function SubNavbar(props) {
-  let Contain = styled.div`
-    background: #131310;
-    height: 100vh;
-    width: 297px;
-    overflow-y: scroll;
-    ::-webkit-scrollbar {
-      display: none;
-    }
-  `;
+function ShowMatch(props) {
   let Image = styled.div`
     display: flex;
     align-items: center;
@@ -71,15 +62,15 @@ function SubNavbar(props) {
   `;
 
   return (
-    <Contain>
+    <div className="contain">
       <Maintitle>
         <Image>
-          <img src="../img/vector_17.svg" />
+          <img src="../img/Schedule.svg" />
         </Image>
-        <Title>리그보기</Title>
+        <Title>경기일정</Title>
         <Close
           onClick={() => {
-            props.setmodalLeague(false);
+            props.setmodalMatch(false);
           }}>
           <img src="../img/vector_36.svg" />
         </Close>
@@ -177,8 +168,8 @@ function SubNavbar(props) {
           </Go>
         </Menu_item>
       </Menu>
-    </Contain>
+    </div>
   );
 }
 
-export default SubNavbar;
+export default ShowMatch;

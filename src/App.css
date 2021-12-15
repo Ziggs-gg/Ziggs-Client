@@ -16,4 +16,14 @@ a {
 .App {
   display: flex;
   flex-direction: row;
+  color: white;
+}
+.contain {
+  background: #131310;
+  height: 100vh;
+  width: 297px;
+  overflow-y: scroll;
+}
+.contain::-webkit-scrollbar {
+  display: none;
 }

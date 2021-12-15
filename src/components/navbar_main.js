@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import SubNavbar from './SubNavbar';
-import ShowTeams from './ShowTeams';
+import ShowTeam from './ShowTeam';
+import ShowLeague from './ShowLeague';
+import ShowMatch from './ShowMatch';
 let Navbar = styled.div`
   display: flex;
 `;
@@ -95,14 +96,6 @@ let List_item_text = styled.span`
   font-weight: 500;
 `;
 
-let Subnavbar1 = styled.div`
-  width: 260px;
-  height: 100vh;
-  background-color: red;
-
-  color: white;
-  text-align: center;
-`;
 let Subnavbar2 = styled.div`
   width: 260px;
   height: 100vh;
@@ -217,10 +210,10 @@ function NavbarMain() {
           </a>
         </List>
       </Navbar_container>
-      {modalMatch == true ? <Subnavbar1 /> : null}
+      {modalMatch == true ? <ShowMatch setmodalMatch={setmodalMatch} /> : null}
       {modalStats == true ? <Subnavbar2 /> : null}
-      {modalLeague == true ? <SubNavbar setmodalLeague={setmodalLeague} /> : null}
-      {modalTeam == true ? <ShowTeams setmodalLeague={setmodalTeam} /> : null}
+      {modalLeague == true ? <ShowLeague setmodalLeague={setmodalLeague} /> : null}
+      {modalTeam == true ? <ShowTeam setmodalTeam={setmodalTeam} /> : null}
       {modalPlayer == true ? <Subnavbar4 /> : null}
     </Navbar>
   );
