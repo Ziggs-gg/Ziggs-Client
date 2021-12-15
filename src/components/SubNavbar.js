@@ -1,15 +1,13 @@
 import React from 'react';
 import '../App.css';
-import styled from 'styled-components'
+import styled from 'styled-components';
 
-
-
-function SubNavbar() {
-
+function SubNavbar(props) {
   let Contain = styled.div`
     background: #131310;
     height: 100vh;
     width: 297px;
+    overflow: scroll;
   `;
 
   let Maintitle = styled.div`
@@ -25,7 +23,7 @@ function SubNavbar() {
   `;
 
   let Close = styled.button`
-    background: black;
+    background: #131310;
     margin-top: 10px;
     margin-left: 132px;
     padding: 10px;
@@ -41,9 +39,9 @@ function SubNavbar() {
     font-size: 16px;
     font-weight: 500;
     border-bottom: 2px solid;
-    border-color: #C13631;
+    border-color: #c13631;
   `;
-  
+
   let Menu = styled.ul`
     list-style: none;
     margin: 0;
@@ -63,35 +61,111 @@ function SubNavbar() {
     text-decoration: none;
     color: white;
   `;
-  
-  return(
+
+  return (
     <Contain>
       <Maintitle>
-        <img src="../img/vector_17.svg"/><Title>리그보기</Title>
-        <Close><img src="../img/vector_36.svg"/></Close>
+        <img src="../img/vector_17.svg" />
+        <Title>리그보기</Title>
+        <Close
+          onClick={() => {
+            props.setmodalLeague(false);
+          }}>
+          <img src="../img/vector_36.svg" />
+        </Close>
       </Maintitle>
       <Leaguetitle>메이저리그</Leaguetitle>
       <Menu>
-        <Menu_item><Go href=""><img src="../img/LCK_Logo.svg" /><Leaguename>LCK</Leaguename></Go></Menu_item>
-        <Menu_item><Go href=""><img src="../img/LPL_Logo.svg" /><Leaguename>LPL</Leaguename></Go></Menu_item>
-        <Menu_item><Go href=""><img src="../img/LEC_Logo.svg" /><Leaguename>LEC</Leaguename></Go></Menu_item>
-        <Menu_item><Go href=""><img src="../img/LCS_Logo.svg" /><Leaguename>LCS</Leaguename></Go></Menu_item>
+        <Menu_item>
+          <Go href="">
+            <img src="../img/LCK_Logo.svg" />
+            <Leaguename>LCK</Leaguename>
+          </Go>
+        </Menu_item>
+        <Menu_item>
+          <Go href="">
+            <img src="../img/LPL_Logo.svg" />
+            <Leaguename>LPL</Leaguename>
+          </Go>
+        </Menu_item>
+        <Menu_item>
+          <Go href="">
+            <img src="../img/LEC_Logo.svg" />
+            <Leaguename>LEC</Leaguename>
+          </Go>
+        </Menu_item>
+        <Menu_item>
+          <Go href="">
+            <img src="../img/LCS_Logo.svg" />
+            <Leaguename>LCS</Leaguename>
+          </Go>
+        </Menu_item>
       </Menu>
       <Leaguetitle>마이너리그</Leaguetitle>
       <Menu>
-        <Menu_item><Go href=""><img src="../img/CBLOL_Logo.svg" /><Leaguename>CBLOL</Leaguename></Go></Menu_item>
-        <Menu_item><Go href=""><img src="../img/LCL_Logo.svg" /><Leaguename>LCL</Leaguename></Go></Menu_item>
-        <Menu_item><Go href=""><img src="../img/LCO_Logo.svg" /><Leaguename>LCO</Leaguename></Go></Menu_item>
-        <Menu_item><Go href=""><img src="../img/LJL_Logo.svg" /><Leaguename>LJL</Leaguename></Go></Menu_item>
-        <Menu_item><Go href=""><img src="../img/LLA_Logo.svg" /><Leaguename>LLA</Leaguename></Go></Menu_item>
-        <Menu_item><Go href=""><img src="../img/PCS_Logo.svg" /><Leaguename>PCS</Leaguename></Go></Menu_item>
-        <Menu_item><Go href=""><img src="../img/TCL_Logo.svg" /><Leaguename>TCL</Leaguename></Go></Menu_item>
-        <Menu_item><Go href=""><img src="../img/VCS_Logo.svg" /><Leaguename>VCS</Leaguename></Go></Menu_item>
+        <Menu_item>
+          <Go href="">
+            <img src="../img/CBLOL_Logo.svg" />
+            <Leaguename>CBLOL</Leaguename>
+          </Go>
+        </Menu_item>
+        <Menu_item>
+          <Go href="">
+            <img src="../img/LCL_Logo.svg" />
+            <Leaguename>LCL</Leaguename>
+          </Go>
+        </Menu_item>
+        <Menu_item>
+          <Go href="">
+            <img src="../img/LCO_Logo.svg" />
+            <Leaguename>LCO</Leaguename>
+          </Go>
+        </Menu_item>
+        <Menu_item>
+          <Go href="">
+            <img src="../img/LJL_Logo.svg" />
+            <Leaguename>LJL</Leaguename>
+          </Go>
+        </Menu_item>
+        <Menu_item>
+          <Go href="">
+            <img src="../img/LLA_Logo.svg" />
+            <Leaguename>LLA</Leaguename>
+          </Go>
+        </Menu_item>
+        <Menu_item>
+          <Go href="">
+            <img src="../img/PCS_Logo.svg" />
+            <Leaguename>PCS</Leaguename>
+          </Go>
+        </Menu_item>
+        <Menu_item>
+          <Go href="">
+            <img src="../img/TCL_Logo.svg" />
+            <Leaguename>TCL</Leaguename>
+          </Go>
+        </Menu_item>
+        <Menu_item>
+          <Go href="">
+            <img src="../img/VCS_Logo.svg" />
+            <Leaguename>VCS</Leaguename>
+          </Go>
+        </Menu_item>
       </Menu>
       <Leaguetitle>국제대회</Leaguetitle>
       <Menu>
-        <Menu_item><Go href=""><img src="../img/MSI_Logo.svg" /><Leaguename>MSI</Leaguename></Go></Menu_item>
-        <Menu_item><Go href=""><img src="../img/WORLDS_Logo.svg" /><Leaguename>WORLDS</Leaguename></Go></Menu_item>
+        <Menu_item>
+          <Go href="">
+            <img src="../img/MSI_Logo.svg" />
+            <Leaguename>MSI</Leaguename>
+          </Go>
+        </Menu_item>
+        <Menu_item>
+          <Go href="">
+            <img src="../img/WORLDS_Logo.svg" />
+            <Leaguename>WORLDS</Leaguename>
+          </Go>
+        </Menu_item>
       </Menu>
     </Contain>
   );

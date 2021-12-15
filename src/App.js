@@ -1,11 +1,14 @@
 import './App.css';
+import { Link, Route, Switch } from 'react-router-dom';
 import SubNavbar from './components/SubNavbar';
-import ShowPlayer from './components/ShowPlayer';
+import NavbarMain from './components/navbar_main';
+import TestCpn from './components/TestComponent';
 
 function App() {
   return (
     <div className="App">
-      <ShowPlayer />
+      <NavbarMain />
+      <TestCpn />
     </div>
   );
 }
