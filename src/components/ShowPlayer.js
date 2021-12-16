@@ -3,18 +3,21 @@ import '../App.css';
 import styled from 'styled-components';
 import PlayerList from './PlayerList';
 
-function ShowPlayer (props){
-
+function ShowPlayer(props) {
   let Contain = styled.div`
     background: #131310;
     height: 100vh;
     width: 297px;
     overflow: scroll;
   `;
-
+  let Image = styled.div`
+    display: flex;
+    align-items: center;
+    width: 24px;
+  `;
   let Maintitle = styled.div`
     display: flex;
-    padding: 20px 0 0 25px;
+    padding: 5px 0 0 25px;
     color: #ffffff;
     font-size: 18px;
     font-weight: 500;
@@ -44,7 +47,7 @@ function ShowPlayer (props){
     border-bottom: 2px solid;
     border-color: #c13631;
     overflow-x: scroll;
-    white-space:nowrap;
+    white-space: nowrap;
   `;
 
   let Click = styled.button`
@@ -57,10 +60,12 @@ function ShowPlayer (props){
     cursor: pointer;
   `;
 
-  return(
+  return (
     <Contain>
       <Maintitle>
-        <img src="../img/vector_17.svg" />
+        <Image>
+          <img src="../img/vector_17.svg" />
+        </Image>
         <Title>선수보기</Title>
         <Close
           onClick={() => {
@@ -70,25 +75,59 @@ function ShowPlayer (props){
         </Close>
       </Maintitle>
       <Subcontain>
-        <Click><img src="../img/LCK_Logo.svg" /></Click>
-        <Click><img src="../img/LEC_Logo.svg" /></Click>
-        <Click><img src="../img/LPL_Logo.svg" /></Click>
-        <Click><img src="../img/LCS_Logo.svg" /></Click>
-        <Click><img src="../img/CBLOL_Logo.svg" /></Click>
-        <Click><img src="../img/LCL_Logo.svg" /></Click>
-        <Click><img src="../img/LCO_Logo.svg" /></Click>
-        <Click><img src="../img/LJL_Logo.svg" /></Click>
-        <Click><img src="../img/LLA_Logo.svg" /></Click>
-        <Click><img src="../img/PCS_Logo.svg" /></Click>
-        <Click><img src="../img/TCL_Logo.svg" /></Click>
-        <Click><img src="../img/VCS_Logo.svg" /></Click>
+        <Click>
+          <img src="../img/LCK_Logo.svg" />
+        </Click>
+        <Click>
+          <img src="../img/LEC_Logo.svg" />
+        </Click>
+        <Click>
+          <img src="../img/LPL_Logo.svg" />
+        </Click>
+        <Click>
+          <img src="../img/LCS_Logo.svg" />
+        </Click>
+        <Click>
+          <img src="../img/CBLOL_Logo.svg" />
+        </Click>
+        <Click>
+          <img src="../img/LCL_Logo.svg" />
+        </Click>
+        <Click>
+          <img src="../img/LCO_Logo.svg" />
+        </Click>
+        <Click>
+          <img src="../img/LJL_Logo.svg" />
+        </Click>
+        <Click>
+          <img src="../img/LLA_Logo.svg" />
+        </Click>
+        <Click>
+          <img src="../img/PCS_Logo.svg" />
+        </Click>
+        <Click>
+          <img src="../img/TCL_Logo.svg" />
+        </Click>
+        <Click>
+          <img src="../img/VCS_Logo.svg" />
+        </Click>
       </Subcontain>
       <Subcontain>
-        <Click><img src="../img/TOP.svg" /></Click>
-        <Click><img src="../img/JUG.svg" /></Click>
-        <Click><img src="../img/MID.svg" /></Click>
-        <Click><img src="../img/BOT.svg" /></Click>
-        <Click><img src="../img/SUP.svg" /></Click>
+        <Click>
+          <img src="../img/TOP.svg" />
+        </Click>
+        <Click>
+          <img src="../img/JUG.svg" />
+        </Click>
+        <Click>
+          <img src="../img/MID.svg" />
+        </Click>
+        <Click>
+          <img src="../img/BOT.svg" />
+        </Click>
+        <Click>
+          <img src="../img/SUP.svg" />
+        </Click>
       </Subcontain>
       <PlayerList />
     </Contain>

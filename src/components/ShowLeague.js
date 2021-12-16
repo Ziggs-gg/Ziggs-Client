@@ -7,7 +7,6 @@ function ShowLeague(props) {
     display: flex;
     align-items: center;
     width: 24px;
-    height: auto;
   `;
   let Maintitle = styled.div`
     display: flex;
