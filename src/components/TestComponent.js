@@ -3,6 +3,7 @@ import '../App.css';
 import styled from 'styled-components';
 
 function TestCpn() {
+  let bgImage = styled.img``;
   let MainContent = styled.div`
     color: white;
     overflow-y: scroll;
@@ -12,30 +13,6 @@ function TestCpn() {
       display: auto;
     }
   `;
-  return (
-    <MainContent>
-      1243125j2
-      <br />3<br />3<br />3<br />3<br />3<br />3<br />3
-      <br />3<br />3<br />3<br />3<br />3<br />3<br />3<br />3<br />
-      3<br />3<br />3<br />3<br />3<br />3<br />3<br />
-      3<br />
-      nk5j2h35j2352o5j23532 1243125j2
-      <br />3<br />3<br />3<br />3<br />3<br />3<br />3
-      <br />3<br />3<br />3<br />3<br />3<br />3<br />3<br />3<br />
-      3<br />3<br />3<br />3<br />3<br />3<br />3<br />
-      3<br />
-      nk5j2h35j2352o5j23532 1243125j2
-      <br />3<br />3<br />3<br />3<br />3<br />3<br />3
-      <br />3<br />3<br />3<br />3<br />3<br />3<br />3<br />3<br />
-      3<br />3<br />3<br />3<br />3<br />3<br />3<br />
-      3<br />
-      nk5j2h35j2352o5j23532 1243125j2
-      <br />3<br />3<br />3<br />3<br />3<br />3<br />3
-      <br />3<br />3<br />3<br />3<br />3<br />3<br />3<br />3<br />
-      3<br />3<br />3<br />3<br />3<br />3<br />3<br />
-      3<br />
-      nk5j2h35j2352o5j23532
-    </MainContent>
-  );
+  return <img src="img/Schedule.svg" className="BGimage" />;
 }
 export default TestCpn;

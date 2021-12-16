@@ -27,3 +27,8 @@ a {
 .contain::-webkit-scrollbar {
   display: none;
 }
+.BGimage {
+  width: 300px;
+  height: 300px;
+  filter: blur();
+}
