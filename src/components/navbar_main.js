@@ -4,6 +4,7 @@ import ShowPlayer from './ShowPlayer';
 import ShowTeam from './ShowTeam';
 import ShowLeague from './ShowLeague';
 import ShowMatch from './ShowMatch';
+import { ReactComponent as Schedule } from '../img/Schedule.svg';
 let Navbar = styled.div`
   display: flex;
 `;
@@ -105,21 +106,12 @@ let Subnavbar2 = styled.div`
   color: white;
   text-align: center;
 `;
-let Subnavbar3 = styled.div`
-  width: 260px;
-  height: 100vh;
-  background-color: wheat;
 
-  color: white;
-  text-align: center;
-`;
-let Subnavbar4 = styled.div`
-  width: 260px;
-  height: 100vh;
-  background-color: blue;
-
-  color: white;
-  text-align: center;
+let Schedule_icon = styled(Schedule)`
+  path,
+  rect {
+    stroke: #f3f3f3;
+  }
 `;
 function NavbarMain() {
   let [modalMatch, setmodalMatch] = useState(false);
@@ -153,7 +145,7 @@ function NavbarMain() {
                 setmodalTeam(false);
                 setmodalStats(false);
               }}>
-              <img src="img/Schedule.svg" />
+              <Schedule_icon />
               <List_item_text>경기일정</List_item_text>
             </List_item>
           </a>
