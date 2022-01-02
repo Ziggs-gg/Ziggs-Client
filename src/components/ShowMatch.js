@@ -62,7 +62,7 @@ function ShowMatch(props) {
   `;
 
   return (
-    <div className="contain">
+    <div className="navbar-contain">
       <Maintitle>
         <Image>
           <img src="../img/Schedule.svg" />

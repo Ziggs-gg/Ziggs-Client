@@ -91,7 +91,7 @@ function ShowTeam(props) {
     line-height: 23px;
   `;
   return (
-    <div className="contain">
+    <div className="navbar-contain">
       <Maintitle>
         <Image>
           <img src="../img/Teams.svg" />

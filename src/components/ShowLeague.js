@@ -61,7 +61,7 @@ function ShowLeague(props) {
   `;
 
   return (
-    <div className="contain">
+    <div className="navbar-contain">
       <Maintitle>
         <Image>
           <img src="../img/vector_17.svg" />

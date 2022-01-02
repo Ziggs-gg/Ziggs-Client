@@ -1,47 +1,45 @@
 import React from 'react';
 import '../App.css';
 import styled from 'styled-components';
-import { ReactComponent as Arrow } from '../img/Arrow_Down.svg';
-import { ReactComponent as Schedule } from '../img/Schedule.svg';
+
+import { ReactComponent as BG } from '../img/BG.svg';
+
+import BG_Logo from '../img/BG_Logo.png';
 function TestCpn() {
-  let bgImage = styled.img``;
-  let MainContent = styled.div`
-    color: white;
-    overflow-y: scroll;
-    height: 100vh;
+  let Banner = styled.div`
+    position: absolute;
+    z-index: 1;
     width: 100%;
-    ::-webkit-scrollbar {
-      display: auto;
-    }
+    height: inherit;
+    background-color: #5dc0c0;
+    background-image: url('../img/BG_Logo.png');
+    opacity: 0.1;
+    filter: blur(32px);
   `;
-  let Icon = styled(Arrow)`
-    :hover {
-      path {
-        stroke: red;
-      }
-    }
-    path {
-      stroke: white;
-    }
+
+  // let Background = styled(BG)`
+  //   z-index: 1;
+
+  //   width: 100%;
+  //   height: 100%;
+  //   opacity: 0.2;
+
+  //   path {
+  //     fill: #5dc0c0;
+  //   }
+  //`;
+  let TeamLogo = styled.img`
+    z-index: 2;
+    position: relative;
+    width: 25%;
+    height: auto;
   `;
-  let Schedule1 = styled(Schedule)`
-    :hover {
-      path,
-      rect {
-        stroke: red;
-      }
-    }
-    path,
-    rect {
-      stroke: #f3f3f3;
-    }
-  `;
+
   return (
-    <>
-      <Schedule1 width={100} height={100} />
-      <Icon width="100" height="100" fill="red" />
-      <Arrow width="100" height="100" fill="red" />
-    </>
+    <div className="main-contain">
+      <Banner></Banner>
+      <TeamLogo src={BG_Logo} />
+    </div>
   );
 }
 export default TestCpn;
