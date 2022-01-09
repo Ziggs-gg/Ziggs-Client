@@ -1,16 +1,16 @@
 import React from 'react';
-import '../App.css';
+import '../../App.css';
 import styled from 'styled-components';
-import { ReactComponent as AF } from '../img/AF.svg';
-import { ReactComponent as BRO } from '../img/BRO.svg';
-import { ReactComponent as DRX } from '../img/DRX.svg';
-import { ReactComponent as DWG } from '../img/DWG.svg';
-import { ReactComponent as GENG } from '../img/GENG.svg';
-import { ReactComponent as HLE } from '../img/HLE.svg';
-import { ReactComponent as KT } from '../img/KT.svg';
-import { ReactComponent as T1 } from '../img/T1.svg';
-import { ReactComponent as NS } from '../img/NS.svg';
-import { ReactComponent as SB } from '../img/SB.svg';
+import { ReactComponent as AF } from '../../img/AF.svg';
+import { ReactComponent as BRO } from '../../img/BRO.svg';
+import { ReactComponent as DRX } from '../../img/DRX.svg';
+import { ReactComponent as DWG } from '../../img/DWG.svg';
+import { ReactComponent as GENG } from '../../img/GENG.svg';
+import { ReactComponent as HLE } from '../../img/HLE.svg';
+import { ReactComponent as KT } from '../../img/KT.svg';
+import { ReactComponent as T1 } from '../../img/T1.svg';
+import { ReactComponent as NS } from '../../img/NS.svg';
+import { ReactComponent as SB } from '../../img/SB.svg';
 function ShowTeam(props) {
   let Maintitle = styled.div`
     display: flex;

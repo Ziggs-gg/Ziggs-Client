@@ -1,14 +1,12 @@
 import './App.css';
 import { Link, Route, Switch } from 'react-router-dom';
 
-import NavbarMain from './components/navbar_main';
-import TestCpn from './components/TestComponent';
+import NavbarMain from './components/navbar/navbar_main';
 
 function App() {
   return (
     <div className="App">
       <NavbarMain />
-      <TestCpn />
     </div>
   );
 }

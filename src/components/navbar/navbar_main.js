@@ -4,7 +4,7 @@ import ShowPlayer from './ShowPlayer';
 import ShowTeam from './ShowTeam';
 import ShowLeague from './ShowLeague';
 import ShowMatch from './ShowMatch';
-import { ReactComponent as Schedule } from '../img/Schedule.svg';
+import { ReactComponent as Schedule } from '../../img/Schedule.svg';
 let Navbar = styled.div`
   display: flex;
 `;
