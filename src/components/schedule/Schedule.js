@@ -1,8 +1,8 @@
 import React,{ useState } from 'react';
-import '../App.css';
+import '../../App.css';
 import styled from 'styled-components';
 import DailyMatchList from './DailyMatchList';
-import matchdata from '../matchdata.js';
+import matchdata from '../../matchdata.js';
 
 
 function Schedule(props) {
