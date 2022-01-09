@@ -58,7 +58,7 @@ function ShowPlayer (props){
   `;
 
   return(
-    <Contain>
+    <div className='contain'>
       <Maintitle>
         <img src="../img/vector_17.svg" />
         <Title>선수보기</Title>
@@ -91,7 +91,7 @@ function ShowPlayer (props){
         <Click><img src="../img/SUP.svg" /></Click>
       </Subcontain>
       <PlayerList />
-    </Contain>
+    </div>
   );
 }
 

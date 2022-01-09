@@ -1,14 +1,15 @@
+import React,{ useState } from 'react';
 import './App.css';
 import { Link, Route, Switch } from 'react-router-dom';
 
 import NavbarMain from './components/navbar_main';
-import TestCpn from './components/TestComponent';
+import MainSchedule from './components/MainSchedule';
 
 function App() {
   return (
     <div className="App">
       <NavbarMain />
-      <TestCpn />
+      <MainSchedule />
     </div>
   );
 }
