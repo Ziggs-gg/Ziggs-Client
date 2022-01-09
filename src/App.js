@@ -8,7 +8,12 @@ function App() {
   return (
     <div className="App">
       <NavbarMain />
-      <MainSchedule />
+      <Route path={'/match/lck'}>
+        <MainSchedule />
+      </Route>
+      <Route path="/compare">
+        <div>asfasg</div>
+      </Route>
     </div>
   );
 }

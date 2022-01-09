@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link, Route, Switch } from 'react-router-dom';
 import styled from 'styled-components';
 import ShowPlayer from './ShowPlayer';
 import ShowTeam from './ShowTeam';
@@ -123,10 +124,12 @@ function NavbarMain() {
   return (
     <Navbar>
       <Navbar_container>
-        <Title>
-          <Logo src="img/LOGO.svg" />
-          <Title_text>ZIGGS.GG</Title_text>
-        </Title>
+        <a href="/">
+          <Title>
+            <Logo src="img/LOGO.svg" />
+            <Title_text>ZIGGS.GG</Title_text>
+          </Title>
+        </a>
         <Search_bar_container>
           <Search_bar_form action="">
             <Search_bar className="search-bar">
@@ -136,7 +139,7 @@ function NavbarMain() {
           </Search_bar_form>
         </Search_bar_container>
         <List>
-          <a href="#">
+          <Link to="/match">
             <List_item
               onClick={() => {
                 setmodalMatch(!modalMatch);
@@ -148,16 +151,9 @@ function NavbarMain() {
               <Schedule_icon />
               <List_item_text>경기일정</List_item_text>
             </List_item>
-          </a>
-          <a href="#">
-            <List_item
-              onClick={() => {
-                setmodalStats(!modalStats);
-                setmodalLeague(false);
-                setmodalPlayer(false);
-                setmodalTeam(false);
-                setmodalMatch(false);
-              }}>
+          </Link>
+          <a href="/compare">
+            <List_item>
               <img src="img/Stat_Comparisons.svg" />
               <List_item_text>통계비교</List_item_text>
             </List_item>
