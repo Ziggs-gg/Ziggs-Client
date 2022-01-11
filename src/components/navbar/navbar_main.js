@@ -74,7 +74,6 @@ let List = styled.ul`
   flex-direction: column;
   align-items: center;
   padding: 0px;
-
   width: 260px;
   height: 290px;
 `;
@@ -103,7 +102,6 @@ let Subnavbar2 = styled.div`
   width: 260px;
   height: 100vh;
   background-color: green;
-
   color: white;
   text-align: center;
 `;
