@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../../App.css';
 import styled from 'styled-components';
+import Data from '../../data/LeagueData.js';
+import SubNabBarCell from './SubNavBarCell.js';
 
 function ShowLeague(props) {
   let Image = styled.div`
@@ -40,26 +42,10 @@ function ShowLeague(props) {
     border-color: #c13631;
   `;
 
-  let Menu = styled.ul`
-    list-style: none;
-    margin: 0;
-  `;
-
-  let Menu_item = styled.li`
-    padding: 8px 87px 0 70px;
-  `;
-
-  let Leaguename = styled.p`
-    margin-left: 8px;
-    font-size: 16px;
-  `;
-
-  let Go = styled.a`
-    display: flex;
-    text-decoration: none;
-    color: white;
-  `;
-
+  const [leagueData, setleagueData] = useState(Data);
+  const majorLeague = leagueData.filter((leagueData) => leagueData.division == 'major');
+  const minorLeague = leagueData.filter((leagueData) => leagueData.division == 'minor');
+  const worldLeague = leagueData.filter((leagueData) => leagueData.division == 'world');
   return (
     <div className="navbar-contain">
       <Maintitle>
@@ -75,98 +61,17 @@ function ShowLeague(props) {
         </Close>
       </Maintitle>
       <Leaguetitle>메이저리그</Leaguetitle>
-      <Menu>
-        <Menu_item>
-          <Go href="">
-            <img src="../img/LCK_Logo.svg" />
-            <Leaguename>LCK</Leaguename>
-          </Go>
-        </Menu_item>
-        <Menu_item>
-          <Go href="">
-            <img src="../img/LPL_Logo.svg" />
-            <Leaguename>LPL</Leaguename>
-          </Go>
-        </Menu_item>
-        <Menu_item>
-          <Go href="">
-            <img src="../img/LEC_Logo.svg" />
-            <Leaguename>LEC</Leaguename>
-          </Go>
-        </Menu_item>
-        <Menu_item>
-          <Go href="">
-            <img src="../img/LCS_Logo.svg" />
-            <Leaguename>LCS</Leaguename>
-          </Go>
-        </Menu_item>
-      </Menu>
+      {majorLeague.map((data, index) => {
+        return <SubNabBarCell leagues={data} key={index} />;
+      })}
       <Leaguetitle>마이너리그</Leaguetitle>
-      <Menu>
-        <Menu_item>
-          <Go href="">
-            <img src="../img/CBLOL_Logo.svg" />
-            <Leaguename>CBLOL</Leaguename>
-          </Go>
-        </Menu_item>
-        <Menu_item>
-          <Go href="">
-            <img src="../img/LCL_Logo.svg" />
-            <Leaguename>LCL</Leaguename>
-          </Go>
-        </Menu_item>
-        <Menu_item>
-          <Go href="">
-            <img src="../img/LCO_Logo.svg" />
-            <Leaguename>LCO</Leaguename>
-          </Go>
-        </Menu_item>
-        <Menu_item>
-          <Go href="">
-            <img src="../img/LJL_Logo.svg" />
-            <Leaguename>LJL</Leaguename>
-          </Go>
-        </Menu_item>
-        <Menu_item>
-          <Go href="">
-            <img src="../img/LLA_Logo.svg" />
-            <Leaguename>LLA</Leaguename>
-          </Go>
-        </Menu_item>
-        <Menu_item>
-          <Go href="">
-            <img src="../img/PCS_Logo.svg" />
-            <Leaguename>PCS</Leaguename>
-          </Go>
-        </Menu_item>
-        <Menu_item>
-          <Go href="">
-            <img src="../img/TCL_Logo.svg" />
-            <Leaguename>TCL</Leaguename>
-          </Go>
-        </Menu_item>
-        <Menu_item>
-          <Go href="">
-            <img src="../img/VCS_Logo.svg" />
-            <Leaguename>VCS</Leaguename>
-          </Go>
-        </Menu_item>
-      </Menu>
+      {minorLeague.map((data, index) => {
+        return <SubNabBarCell leagues={data} key={index} />;
+      })}
       <Leaguetitle>국제대회</Leaguetitle>
-      <Menu>
-        <Menu_item>
-          <Go href="">
-            <img src="../img/MSI_Logo.svg" />
-            <Leaguename>MSI</Leaguename>
-          </Go>
-        </Menu_item>
-        <Menu_item>
-          <Go href="">
-            <img src="../img/WORLDS_Logo.svg" />
-            <Leaguename>WORLDS</Leaguename>
-          </Go>
-        </Menu_item>
-      </Menu>
+      {worldLeague.map((data, index) => {
+        return <SubNabBarCell leagues={data} key={index} />;
+      })}
     </div>
   );
 }

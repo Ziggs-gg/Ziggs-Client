@@ -1,0 +1,86 @@
+export default [
+  {
+    id: 0,
+    division: 'major',
+    name: 'LCK',
+    nation: 'KOREA',
+  },
+  {
+    id: 1,
+    division: 'major',
+    name: 'LPL',
+    nation: 'CHINA',
+  },
+  {
+    id: 2,
+    division: 'major',
+    name: 'LEC',
+    nation: 'EUROPE',
+  },
+  {
+    id: 3,
+    division: 'major',
+    name: 'LCS',
+    nation: 'NORTH AMERICA',
+  },
+  {
+    id: 4,
+    division: 'minor',
+    name: 'CBLOL',
+    nation: 'BRAZIL',
+  },
+  {
+    id: 5,
+    division: 'minor',
+    name: 'LCL',
+    nation: 'C.I.S.',
+  },
+  {
+    id: 6,
+    division: 'minor',
+    name: 'LCO',
+    nation: 'OCEANIA',
+  },
+  {
+    id: 7,
+    division: 'minor',
+    name: 'LJL',
+    nation: 'JAPAN',
+  },
+  {
+    id: 8,
+    division: 'minor',
+    name: 'LLA',
+    nation: 'LATIN AMERICA',
+  },
+  {
+    id: 9,
+    division: 'minor',
+    name: 'PCS',
+    nation: 'SOUTHEAST ASIA',
+  },
+  {
+    id: 10,
+    division: 'minor',
+    name: 'TCL',
+    nation: 'TURKEY',
+  },
+  {
+    id: 11,
+    division: 'minor',
+    name: 'VCS',
+    nation: 'VIETNAM',
+  },
+  {
+    id: 12,
+    division: 'world',
+    name: 'MSI',
+    nation: 'world',
+  },
+  {
+    id: 13,
+    division: 'world',
+    name: 'WORLDS',
+    nation: 'world',
+  },
+];

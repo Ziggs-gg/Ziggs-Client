@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { Link, Route, Switch } from 'react-router-dom';
 import ShowPlayer from './ShowPlayer';
 import ShowTeam from './ShowTeam';
 import ShowLeague from './ShowLeague';
@@ -115,7 +116,7 @@ let Schedule_icon = styled(Schedule)`
 `;
 function NavbarMain() {
   let [modalMatch, setmodalMatch] = useState(false);
-  let [modalStats, setmodalStats] = useState(false);
+
   let [modalLeague, setmodalLeague] = useState(false);
   let [modalTeam, setmodalTeam] = useState(false);
   let [modalPlayer, setmodalPlayer] = useState(false);
@@ -143,7 +144,6 @@ function NavbarMain() {
                 setmodalLeague(false);
                 setmodalPlayer(false);
                 setmodalTeam(false);
-                setmodalStats(false);
               }}>
               <Schedule_icon />
               <List_item_text>경기일정</List_item_text>
@@ -152,7 +152,6 @@ function NavbarMain() {
           <a href="#">
             <List_item
               onClick={() => {
-                setmodalStats(!modalStats);
                 setmodalLeague(false);
                 setmodalPlayer(false);
                 setmodalTeam(false);
@@ -162,19 +161,18 @@ function NavbarMain() {
               <List_item_text>통계비교</List_item_text>
             </List_item>
           </a>
-          <a href="#">
+          <Link to="/league">
             <List_item
               onClick={() => {
                 setmodalLeague(!modalLeague);
                 setmodalMatch(false);
                 setmodalPlayer(false);
                 setmodalTeam(false);
-                setmodalStats(false);
               }}>
               <img src="img/Leagues.svg" />
               <List_item_text>리그보기</List_item_text>
             </List_item>
-          </a>
+          </Link>
           <a href="#">
             <List_item
               onClick={() => {
@@ -182,7 +180,6 @@ function NavbarMain() {
                 setmodalLeague(false);
                 setmodalPlayer(false);
                 setmodalMatch(false);
-                setmodalStats(false);
               }}>
               <img src="img/Teams.svg" />
               <List_item_text>구단보기</List_item_text>
@@ -195,7 +192,6 @@ function NavbarMain() {
                 setmodalLeague(false);
                 setmodalTeam(false);
                 setmodalMatch(false);
-                setmodalStats(false);
               }}>
               <img src="img/Players.svg" />
               <List_item_text>선수보기</List_item_text>
@@ -204,7 +200,6 @@ function NavbarMain() {
         </List>
       </Navbar_container>
       {modalMatch == true ? <ShowMatch setmodalMatch={setmodalMatch} /> : null}
-      {modalStats == true ? <Subnavbar2 /> : null}
       {modalLeague == true ? <ShowLeague setmodalLeague={setmodalLeague} /> : null}
       {modalTeam == true ? <ShowTeam setmodalTeam={setmodalTeam} /> : null}
       {modalPlayer == true ? <ShowPlayer setmodalPlayer={setmodalPlayer} /> : null}
