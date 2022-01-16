@@ -17,6 +17,7 @@ a {
   display: flex;
   flex-direction: row;
   color: white;
+  background: #131310;
 }
 .navbar-contain {
   background: #131310;
@@ -40,6 +41,8 @@ a {
 
   height: 100vh;
   width: 100%;
+  margin-left: 11px;
+  margin-right: 11px;
 }
 .main-contain::-webkit-scrollbar {
   display: auto;

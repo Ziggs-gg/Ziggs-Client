@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import styled from 'styled-components';
 import { Link, Route, Switch } from 'react-router-dom';
+import styled from 'styled-components';
 import ShowPlayer from './ShowPlayer';
 import ShowTeam from './ShowTeam';
 import ShowLeague from './ShowLeague';
@@ -123,10 +123,12 @@ function NavbarMain() {
   return (
     <Navbar>
       <Navbar_container>
-        <Title>
-          <Logo src="img/LOGO.svg" />
-          <Title_text>ZIGGS.GG</Title_text>
-        </Title>
+        <a href="/">
+          <Title>
+            <Logo src="img/LOGO.svg" />
+            <Title_text>ZIGGS.GG</Title_text>
+          </Title>
+        </a>
         <Search_bar_container>
           <Search_bar_form action="">
             <Search_bar className="search-bar">
@@ -136,7 +138,7 @@ function NavbarMain() {
           </Search_bar_form>
         </Search_bar_container>
         <List>
-          <a href="#">
+          <a href='#'>
             <List_item
               onClick={() => {
                 setmodalMatch(!modalMatch);

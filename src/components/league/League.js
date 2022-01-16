@@ -5,6 +5,8 @@ import SeasonData from '../../data/SeasonData.js';
 import TeamData from '../../data/TeamData.js';
 import SeasonButtonCell from './SeasonButtonCell';
 import TeamLogoCell from './TeamLogoCell';
+import ShowLeagueSchedule from './ShowLeagueSchedule';
+import Standing from './Standing';
 function League(props) {
   let Seasons_selection = styled.div`
     display: flex;
@@ -38,13 +40,12 @@ function League(props) {
     width: 100%;
   `;
   let Divider = styled.div`
-    width: 98%;
+    width: 100%;
     background-color: #363634;
     border: 1.5px solid #363634;
   `;
 
   let LOGO = styled.img`
-    margin-left: 8px;
     margin-right: 22px;
   `;
   let Title = styled.div`
@@ -69,7 +70,7 @@ function League(props) {
   let Teams = styled.div`
     display: flex;
     flex-direction: column;
-    width: 750px;
+    width: 730px;
     height: 114px;
   `;
   let TeamsTextDiv = styled.div`
@@ -93,7 +94,7 @@ function League(props) {
     display: flex;
     overflow-x: scroll;
     flex-direction: row;
-
+    overflow-x: scroll;
     margin-top: 8px;
     align-items: center;
     ::-webkit-scrollbar {
@@ -141,6 +142,8 @@ function League(props) {
         </Banner>
         <Divider />
       </Top_Banner>
+      <ShowLeagueSchedule />
+      <Standing />
     </div>
   );
 }

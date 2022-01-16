@@ -3,6 +3,7 @@ import '../../App.css';
 import styled from 'styled-components';
 import Data from '../../data/LeagueData.js';
 import SubNabBarCell from './SubNavBarCell.js';
+
 function ShowMatch(props) {
   let Image = styled.div`
     display: flex;
