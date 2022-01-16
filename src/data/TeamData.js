@@ -60,4 +60,28 @@ export default [
     full_name: 'T1',
     league: 'lck',
   },
+  /*{
+    id: 10,
+    short_name: 'T1',
+    full_name: 'T1',
+    league: 'lck',
+  },
+  {
+    id: 11,
+    short_name: 'T1',
+    full_name: 'T1',
+    league: 'lck',
+  },
+  {
+    id: 12,
+    short_name: 'T1',
+    full_name: 'T1',
+    league: 'lck',
+  },
+  {
+    id: 13,
+    short_name: 'T1',
+    full_name: 'T1',
+    league: 'lck',
+  },*/
 ];

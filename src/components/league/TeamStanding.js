@@ -1,11 +1,10 @@
 import React,{ useState } from 'react';
-import '../App.css';
+import '../../App.css';
 import styled from 'styled-components';
 
-function MvpStanding() {
+function TeamStanding() {
   
   let Contain = styled.div`
-    margin-left: 90px;
     margin-top: 16px;
   `;
 
@@ -39,31 +38,45 @@ function MvpStanding() {
     padding: 8px 10px 8px 20px;
   `;
 
-  let PositionLogo = styled.td`
-
-  `;
-
-  let PlayerName = styled.td`
-    padding-right: 100px;
+  let TeamNameAndRecord = styled.td`
+    display: flex;
+    flex-direction: column;
+    padding-right: 160px;
     padding-top: 10px;
   `;
 
-  let MvpPoint = styled.td`
+  let TeamName = styled.span`
+    font-size: 16px;
+    font-weight: 500;
+  `;
+
+  let Record = styled.span`
+    font-size: 14px;
+    font-weight: 350;
+  `;
+
+  let WinRate = styled.td`
+    font-size: 16px;
+    font-weight: 500;
+    padding-right: 20px;
+  `;
+
+  let VictoryPoint = styled.td`
     font-size: 16px;
     font-weight: 500;
   `;
 
   return(
     <Contain>
-      <Title>MVP 순위</Title>
+      <Title>팀 순위</Title>
       <StandingTable>
         <StandingTableTr>
           <Ranking>1</Ranking>
           <RankingChange>▲00</RankingChange>
           <TeamLogo><img src='../img/DWG.svg' alt=''/></TeamLogo>
-          <PositionLogo><img src='../img/MID.svg' alt='' /></PositionLogo>
-          <PlayerName>DK ShowMaker</PlayerName>
-          <MvpPoint>1000pts</MvpPoint>
+          <TeamNameAndRecord><TeamName>DWG KIA</TeamName><Record>16승 - 2패</Record></TeamNameAndRecord>
+          <WinRate>89%</WinRate>
+          <VictoryPoint>+23</VictoryPoint>
         </StandingTableTr>
       </StandingTable>
     </Contain>
@@ -71,4 +84,4 @@ function MvpStanding() {
   );
 }
 
-export default MvpStanding;
+export default TeamStanding;

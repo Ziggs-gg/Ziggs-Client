@@ -1,5 +1,5 @@
 import React,{ useState } from 'react';
-import '../App.css';
+import '../../App.css';
 import styled from 'styled-components';
 import TeamStanding from './TeamStanding';
 import MvpStanding from './MvpStanding';
@@ -18,6 +18,8 @@ let Title = styled.span`
 
 let TeamAndMvpContain = styled.div`
   display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 `;
 
   return(

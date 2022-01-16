@@ -1,5 +1,5 @@
 import React,{ useState } from 'react';
-import '../App.css';
+import '../../App.css';
 import styled from 'styled-components';
 import ScheduleDate from './ScheduleDate';
 
@@ -9,12 +9,11 @@ function ShowLeagueSchedule() {
 
   let Contain = styled.div`
     width: auto;
-    overflow-x: scroll;
+    padding-top: 40px;
   `;
-  //schedule list overflow scroll 문제점 해결좀 해주세요....
   let ScheduleContain = styled.div`
     display: flex;
-
+    overflow-x: scroll;
   `;
 
   let Title = styled.span`

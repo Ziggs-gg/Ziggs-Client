@@ -1,7 +1,7 @@
 import React,{ useState } from 'react';
-import '../App.css';
+import '../../App.css';
 import styled from 'styled-components';
-import Schedule from './Schedule';
+
 
 function ScheduleList(){
   let Contain = styled.div`
@@ -63,6 +63,12 @@ function ScheduleList(){
   let TeamAwayLogo = styled.figure`
     margin: 0;
   `;
+
+  let awayscore = 2;
+  let homescore = 3;
+
+  /*let [opacitiy,setOpacitiy] = useState(1);
+  awayscore < homescore ? setOpacitiy(0.5):setOpacitiy(1);*/
   return(
     <Contain>
       <TimeAndBo>
@@ -75,7 +81,7 @@ function ScheduleList(){
         </TeamHomeLogo>
         <TeamHomeName>DRX</TeamHomeName>
       </TeamNameAndLogo>
-      <MatchScore>2 - 0</MatchScore>
+      <MatchScore>{awayscore} - {homescore}</MatchScore>
       <TeamNameAndLogo>
         <TeamAwayName>GEN</TeamAwayName>
         <TeamAwayLogo>

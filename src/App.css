@@ -17,12 +17,14 @@ a {
   display: flex;
   flex-direction: row;
   color: white;
+  background: #131310;
 }
 .navbar-contain {
   background: #131310;
   height: 100vh;
   width: 297px;
   overflow-y: scroll;
+  border-right: 0.5px solid rgba(243, 243, 243, 0.3);
 }
 .navbar-contain::-webkit-scrollbar {
   display: none;
@@ -33,10 +35,13 @@ a {
   filter: blur();
 }
 .main-contain {
+  background: #131310;
   color: white;
   overflow-y: scroll;
   height: 100vh;
   width: 100%;
+  margin-left: 11px;
+  margin-right: 11px;
 }
 .main-contain::-webkit-scrollbar {
   display: auto;
