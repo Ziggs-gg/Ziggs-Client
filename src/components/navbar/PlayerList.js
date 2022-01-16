@@ -1,5 +1,5 @@
 import React from 'react';
-import '../App.css';
+import '../../App.css';
 import styled from 'styled-components';
 
 let Contain = styled.div`
@@ -38,8 +38,8 @@ let CellTextPlayerName = styled.span`
   color: #ffffff;
 `;
 
-function PlayerList(){
-  return(
+function PlayerList() {
+  return (
     <Contain>
       <Playerlist>
         <img src="../img/AF.svg"></img>

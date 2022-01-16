@@ -1,6 +1,16 @@
 import React from 'react';
-import '../App.css';
+import '../../App.css';
 import styled from 'styled-components';
+import { ReactComponent as AF } from '../../img/AF.svg';
+import { ReactComponent as BRO } from '../../img/BRO.svg';
+import { ReactComponent as DRX } from '../../img/DRX.svg';
+import { ReactComponent as DWG } from '../../img/DWG.svg';
+import { ReactComponent as GENG } from '../../img/GENG.svg';
+import { ReactComponent as HLE } from '../../img/HLE.svg';
+import { ReactComponent as KT } from '../../img/KT.svg';
+import { ReactComponent as T1 } from '../../img/T1.svg';
+import { ReactComponent as NS } from '../../img/NS.svg';
+import { ReactComponent as SB } from '../../img/SB.svg';
 function ShowTeam(props) {
   let Maintitle = styled.div`
     display: flex;
@@ -81,7 +91,7 @@ function ShowTeam(props) {
     line-height: 23px;
   `;
   return (
-    <div className="contain">
+    <div className="navbar-contain">
       <Maintitle>
         <Image>
           <img src="../img/Teams.svg" />
@@ -136,70 +146,70 @@ function ShowTeam(props) {
       </UpperMenu>
       <TeamList>
         <TeamCell>
-          <img src="../img/AF.svg" alt="" />
+          <AF />
           <CellText>
             <CellTextLeague>LCK</CellTextLeague>
             <CellTextTeams>Afreeca Freecs</CellTextTeams>
           </CellText>
         </TeamCell>
         <TeamCell>
-          <img src="../img/BRO.svg" alt="" />
+          <BRO />
           <CellText>
             <CellTextLeague>LCK</CellTextLeague>
             <CellTextTeams>Fredit BRION</CellTextTeams>
           </CellText>
         </TeamCell>
         <TeamCell>
-          <img src="../img/DWG.svg" alt="" />
+          <DWG />
           <CellText>
             <CellTextLeague>LCK</CellTextLeague>
             <CellTextTeams>DWG KIA</CellTextTeams>
           </CellText>
         </TeamCell>
         <TeamCell>
-          <img src="../img/DRX.svg" alt="" />
+          <DRX />
           <CellText>
             <CellTextLeague>LCK</CellTextLeague>
             <CellTextTeams>DRX</CellTextTeams>
           </CellText>
         </TeamCell>
         <TeamCell>
-          <img src="../img/GENG.svg" alt="" />
+          <GENG />
           <CellText>
             <CellTextLeague>LCK</CellTextLeague>
             <CellTextTeams>GEN.G</CellTextTeams>
           </CellText>
         </TeamCell>
         <TeamCell>
-          <img src="../img/HLE.svg" alt="" />
+          <HLE />
           <CellText>
             <CellTextLeague>LCK</CellTextLeague>
             <CellTextTeams>Hanhwa Life Esports</CellTextTeams>
           </CellText>
         </TeamCell>
         <TeamCell>
-          <img src="../img/KT.svg" alt="" />
+          <KT />
           <CellText>
             <CellTextLeague>LCK</CellTextLeague>
             <CellTextTeams>KT Rolster</CellTextTeams>
           </CellText>
         </TeamCell>
         <TeamCell>
-          <img src="../img/SB.svg" alt="" />
+          <SB />
           <CellText>
             <CellTextLeague>LCK</CellTextLeague>
             <CellTextTeams>Liiv SANDBOX</CellTextTeams>
           </CellText>
         </TeamCell>
         <TeamCell>
-          <img src="../img/NS.svg" alt="" />
+          <NS />
           <CellText>
             <CellTextLeague>LCK</CellTextLeague>
             <CellTextTeams>NongShim REDFORCE</CellTextTeams>
           </CellText>
         </TeamCell>
         <TeamCell>
-          <img src="../img/T1.svg" alt="" />
+          <T1 />
           <CellText>
             <CellTextLeague>LCK</CellTextLeague>
             <CellTextTeams>T1</CellTextTeams>

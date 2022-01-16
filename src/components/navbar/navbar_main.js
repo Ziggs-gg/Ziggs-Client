@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import { Link, Route, Switch } from 'react-router-dom';
 import styled from 'styled-components';
 import ShowPlayer from './ShowPlayer';
 import ShowTeam from './ShowTeam';
 import ShowLeague from './ShowLeague';
 import ShowMatch from './ShowMatch';
+import { ReactComponent as Schedule } from '../../img/Schedule.svg';
 let Navbar = styled.div`
   display: flex;
 `;
@@ -105,21 +107,12 @@ let Subnavbar2 = styled.div`
   color: white;
   text-align: center;
 `;
-let Subnavbar3 = styled.div`
-  width: 260px;
-  height: 100vh;
-  background-color: wheat;
 
-  color: white;
-  text-align: center;
-`;
-let Subnavbar4 = styled.div`
-  width: 260px;
-  height: 100vh;
-  background-color: blue;
-
-  color: white;
-  text-align: center;
+let Schedule_icon = styled(Schedule)`
+  path,
+  rect {
+    stroke: #f3f3f3;
+  }
 `;
 function NavbarMain() {
   let [modalMatch, setmodalMatch] = useState(false);
@@ -131,10 +124,12 @@ function NavbarMain() {
   return (
     <Navbar>
       <Navbar_container>
-        <Title>
-          <Logo src="img/LOGO.svg" />
-          <Title_text>ZIGGS.GG</Title_text>
-        </Title>
+        <a href="/">
+          <Title>
+            <Logo src="img/LOGO.svg" />
+            <Title_text>ZIGGS.GG</Title_text>
+          </Title>
+        </a>
         <Search_bar_container>
           <Search_bar_form action="">
             <Search_bar className="search-bar">
@@ -144,7 +139,7 @@ function NavbarMain() {
           </Search_bar_form>
         </Search_bar_container>
         <List>
-          <a href="#">
+          <Link to="/match">
             <List_item
               onClick={() => {
                 setmodalMatch(!modalMatch);
@@ -153,19 +148,12 @@ function NavbarMain() {
                 setmodalTeam(false);
                 setmodalStats(false);
               }}>
-              <img src="img/Schedule.svg" />
+              <Schedule_icon />
               <List_item_text>경기일정</List_item_text>
             </List_item>
-          </a>
-          <a href="#">
-            <List_item
-              onClick={() => {
-                setmodalStats(!modalStats);
-                setmodalLeague(false);
-                setmodalPlayer(false);
-                setmodalTeam(false);
-                setmodalMatch(false);
-              }}>
+          </Link>
+          <a href="/compare">
+            <List_item>
               <img src="img/Stat_Comparisons.svg" />
               <List_item_text>통계비교</List_item_text>
             </List_item>

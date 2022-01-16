@@ -1,5 +1,5 @@
 import React from 'react';
-import '../App.css';
+import '../../App.css';
 import styled from 'styled-components';
 
 function ShowLeague(props) {
@@ -7,7 +7,6 @@ function ShowLeague(props) {
     display: flex;
     align-items: center;
     width: 24px;
-    height: auto;
   `;
   let Maintitle = styled.div`
     display: flex;
@@ -62,7 +61,7 @@ function ShowLeague(props) {
   `;
 
   return (
-    <div className="contain">
+    <div className="navbar-contain">
       <Maintitle>
         <Image>
           <img src="../img/vector_17.svg" />

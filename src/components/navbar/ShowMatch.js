@@ -1,6 +1,7 @@
 import React from 'react';
-import '../App.css';
+import '../../App.css';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 
 function ShowMatch(props) {
   let Image = styled.div`
@@ -62,7 +63,7 @@ function ShowMatch(props) {
   `;
 
   return (
-    <div className="contain">
+    <div className="navbar-contain">
       <Maintitle>
         <Image>
           <img src="../img/Schedule.svg" />
@@ -78,11 +79,12 @@ function ShowMatch(props) {
       <Leaguetitle>메이저리그</Leaguetitle>
       <Menu>
         <Menu_item>
-          <Go href="">
+          <Link to="/match/lck">
             <img src="../img/LCK_Logo.svg" />
             <Leaguename>LCK</Leaguename>
-          </Go>
+          </Link>
         </Menu_item>
+
         <Menu_item>
           <Go href="">
             <img src="../img/LPL_Logo.svg" />
