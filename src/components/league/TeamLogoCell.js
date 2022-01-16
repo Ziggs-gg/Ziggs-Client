@@ -7,11 +7,10 @@ function TeamLogoCell(props) {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 63px;
-    height: 53px;
+    padding: 8px 8px;
     border: 1px solid #363634;
     border-radius: 20px;
-    margin-right: 20px;
+    margin-right: 16px;
   `;
   let Logo = styled.img``;
   return (

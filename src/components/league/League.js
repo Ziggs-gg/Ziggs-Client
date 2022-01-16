@@ -1,4 +1,4 @@
-import react, { useState } from 'react';
+import react, { useState, useRef } from 'react';
 import '../../App.css';
 import styled from 'styled-components';
 import SeasonData from '../../data/SeasonData.js';
@@ -12,6 +12,7 @@ function League(props) {
     align-items: center;
     width: 100%;
     height: 50px;
+    margin-top: 8px;
   `;
 
   let Left_Buttons = styled.div`
@@ -26,6 +27,7 @@ function League(props) {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
     width: 100%;
     height: 137px;
   `;
@@ -51,13 +53,14 @@ function League(props) {
   let LeagueTitle = styled.div`
     display: flex;
     flex-direction: column;
-    width: 370px;
+    width: 350px;
     height: 114px;
   `;
   let LeagueName = styled.span`
     margin-top: 25px;
     font-size: 18px;
     font-weight: 500;
+    margin-bottom: 4px;
   `;
   let SeasonName = styled.span`
     font-size: 30px;
@@ -66,7 +69,7 @@ function League(props) {
   let Teams = styled.div`
     display: flex;
     flex-direction: column;
-    width: 810px;
+    width: 750px;
     height: 114px;
   `;
   let TeamsTextDiv = styled.div`
@@ -88,11 +91,18 @@ function League(props) {
   `;
   let TeamLogos = styled.div`
     display: flex;
+    overflow-x: scroll;
     flex-direction: row;
+
     margin-top: 8px;
+    align-items: center;
+    ::-webkit-scrollbar {
+      display: none;
+    }
   `;
   let [seasonData, setSeasonData] = useState(SeasonData);
   let [TeamsData, setTeamsData] = useState(TeamData);
+
   return (
     <div className="main-contain">
       <Seasons_selection>
@@ -104,8 +114,8 @@ function League(props) {
           return <SeasonButtonCell seasons={data} index={index} key={index} />;
         })}
         <Right_Buttons>
-          <img src="../img/Arrows_Right.svg" width={24} />
           <img src="../img/Arrow_Right.svg" width={16} />
+          <img src="../img/Arrows_Right.svg" width={24} />
         </Right_Buttons>
       </Seasons_selection>
       <Top_Banner>

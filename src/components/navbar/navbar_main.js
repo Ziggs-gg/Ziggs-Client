@@ -116,7 +116,6 @@ let Schedule_icon = styled(Schedule)`
 `;
 function NavbarMain() {
   let [modalMatch, setmodalMatch] = useState(false);
-
   let [modalLeague, setmodalLeague] = useState(false);
   let [modalTeam, setmodalTeam] = useState(false);
   let [modalPlayer, setmodalPlayer] = useState(false);
