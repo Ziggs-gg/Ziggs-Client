@@ -53,6 +53,17 @@ function ScheduleList(){
     margin-right: 20px;
   `;
 
+  let Team1 = styled.span`
+    font-size: 16px;
+    font-weight: 500;
+    opacity: 0.5;
+  `;
+
+  let Team2 = styled.span`
+    font-size: 16px;
+    font-weight: 500;
+  `;
+
   let TeamAwayName = styled.span`
     font-size: 16px;
     font-weight: 500;
@@ -67,8 +78,10 @@ function ScheduleList(){
   let awayscore = 2;
   let homescore = 3;
 
-  /*let [opacitiy,setOpacitiy] = useState(1);
-  awayscore < homescore ? setOpacitiy(0.5):setOpacitiy(1);*/
+  //let opacitiy1 = 0.5;
+  //let opacitiy1 = 1;
+  //opacitiyChange = awayscore < homescore ? opacitiy1:opacitiy2;
+  //awayscore < homescore ? setOpacitiy(1):setOpacitiy(0.5);
   return(
     <Contain>
       <TimeAndBo>
@@ -81,7 +94,7 @@ function ScheduleList(){
         </TeamHomeLogo>
         <TeamHomeName>DRX</TeamHomeName>
       </TeamNameAndLogo>
-      <MatchScore>{awayscore} - {homescore}</MatchScore>
+      <MatchScore><Team1>{awayscore}</Team1> - <Team2>{homescore}</Team2></MatchScore>
       <TeamNameAndLogo>
         <TeamAwayName>GEN</TeamAwayName>
         <TeamAwayLogo>
