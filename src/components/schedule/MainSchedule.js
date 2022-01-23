@@ -4,16 +4,22 @@ import '../../App.css';
 import styled from 'styled-components';
 import Schedule from './Schedule';
 import Data from '../../data.js';
-import { Route } from 'react-router-dom';
+
 
 function MainSchedule() {
+
+  let MainScheduleContain = styled.div`
+  width: 100%;
+  `;
+
   let [match, matchchange] = useState(Data);
+
   return (
-    <div>
+    <MainScheduleContain>
       {match.map((a, i) => {
         return <Schedule match={match[i]} i={i} key={i} />;
       })}
-    </div>
+    </MainScheduleContain>
   );
 }
 

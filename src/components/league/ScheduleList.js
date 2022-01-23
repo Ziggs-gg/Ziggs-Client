@@ -1,9 +1,8 @@
-import React,{ useState } from 'react';
+import React, { useState } from 'react';
 import '../../App.css';
 import styled from 'styled-components';
 
-
-function ScheduleList(){
+function ScheduleList(props) {
   let Contain = styled.div`
     display: flex;
     width: 280px;
@@ -26,7 +25,7 @@ function ScheduleList(){
   let BoText = styled.span`
     font-size: 12px;
     font-weight: 350;
-    color: #F3F3F3;
+    color: #f3f3f3;
   `;
 
   let TeamNameAndLogo = styled.div`
@@ -53,17 +52,6 @@ function ScheduleList(){
     margin-right: 20px;
   `;
 
-  let Team1 = styled.span`
-    font-size: 16px;
-    font-weight: 500;
-    opacity: 0.5;
-  `;
-
-  let Team2 = styled.span`
-    font-size: 16px;
-    font-weight: 500;
-  `;
-
   let TeamAwayName = styled.span`
     font-size: 16px;
     font-weight: 500;
@@ -74,31 +62,36 @@ function ScheduleList(){
   let TeamAwayLogo = styled.figure`
     margin: 0;
   `;
+  let team1score = props.match.team1score;
+  let team2score = props.match.team2score;
+  let team1Opacity = 0.5;
+  let team2Opacity = 0.5;
 
-  let awayscore = 2;
-  let homescore = 3;
+  if (team1score < team2score) {
+    team2Opacity = 1;
+  } else {
+    team1Opacity = 1;
+  }
 
-  //let opacitiy1 = 0.5;
-  //let opacitiy1 = 1;
-  //opacitiyChange = awayscore < homescore ? opacitiy1:opacitiy2;
-  //awayscore < homescore ? setOpacitiy(1):setOpacitiy(0.5);
-  return(
+  return (
     <Contain>
       <TimeAndBo>
         <TimeText>17:00</TimeText>
         <BoText>BO3</BoText>
       </TimeAndBo>
-      <TeamNameAndLogo>
-        <TeamHomeLogo >
-          <img src="../img/DRX.svg" alt='' />
+      <TeamNameAndLogo style={{ opacity: team1Opacity }}>
+        <TeamHomeLogo>
+          <img src={`../img/${props.match.team1}.svg`} alt="" />
         </TeamHomeLogo>
         <TeamHomeName>DRX</TeamHomeName>
       </TeamNameAndLogo>
-      <MatchScore><Team1>{awayscore}</Team1> - <Team2>{homescore}</Team2></MatchScore>
-      <TeamNameAndLogo>
+      <MatchScore>
+        {props.match.team1score} - {props.match.team2score}
+      </MatchScore>
+      <TeamNameAndLogo style={{ opacity: team2Opacity }}>
         <TeamAwayName>GEN</TeamAwayName>
         <TeamAwayLogo>
-          <img src='../img/GENG.svg' alt='' />
+          <img src={`../img/${props.match.team2}.svg`} alt="" />
         </TeamAwayLogo>
       </TeamNameAndLogo>
     </Contain>

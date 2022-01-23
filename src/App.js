@@ -1,6 +1,7 @@
-import React,{ useState } from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import { Link, Route, Switch } from 'react-router-dom';
+
 import League from './components/league/League';
 import NavbarMain from './components/navbar/navbar_main';
 import MainSchedule from './components/schedule/MainSchedule';
@@ -11,6 +12,9 @@ function App() {
       <NavbarMain />
       <Route path="/League">
         <League />
+      </Route>
+      <Route path="/Schedule">
+        <MainSchedule />
       </Route>
     </div>
   );

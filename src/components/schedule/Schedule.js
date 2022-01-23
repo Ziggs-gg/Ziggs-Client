@@ -3,6 +3,7 @@ import '../../App.css';
 import styled from 'styled-components';
 import DailyMatchList from './DailyMatchList';
 import matchdata from '../../matchdata.js';
+import { Link } from 'react-router-dom';
 
 
 function Schedule(props) {
@@ -12,13 +13,13 @@ function Schedule(props) {
   margin-top: 20px;
   margin-left: 20px;
   margin-bottom: 40px;
-  width: 1160px;
 `;
 
   let Date = styled.div`
   font-weight: 900;
   font-size: 20px;
-  margin-bottom: 8px;
+  padding-bottom: 8px;
+  border-bottom: solid 1px #838381;
   `;
 
   let [timematch, timechange] = useState(matchdata);
@@ -29,7 +30,7 @@ function Schedule(props) {
       <Date>{ props.match.month }월 { props.match.work }일 { props.match.day }</Date>
       {
         timematch.map((a,i)=>{
-          return <DailyMatchList timematch={timematch[i]} i={i} key={i} />
+          return <Link to="/"><DailyMatchList timematch={timematch[i]} i={i} key={i} /></Link>
         }
       )
     }

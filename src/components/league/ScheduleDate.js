@@ -1,15 +1,12 @@
-import React,{ useState } from 'react';
+import React, { useState } from 'react';
 import '../../App.css';
 import styled from 'styled-components';
-import ScheduleList from './ScheduleList'
-
-function ScheduleDate(){
-
-  let [asd,asdd] = useState(["asd","asdf"]);
-
+import ScheduleList from './ScheduleList';
+import Data from '../../data/matchData.js';
+function ScheduleDate() {
+  let [match, setMatch] = useState(Data);
   let Contain = styled.div`
     margin-right: 48px;
-
   `;
 
   let DateText = styled.div`
@@ -18,12 +15,11 @@ function ScheduleDate(){
     margin-top: 16px;
     margin-bottom: 16px;
   `;
-
-  return(
+  return (
     <Contain>
       <DateText>3월 26일 (금)</DateText>
-      {asd.map((a,i)=>{
-        return <ScheduleList asd={asd[i]} i={i} key={i}/>
+      {match.map((data, i) => {
+        return <ScheduleList match={data} i={i} key={i} />;
       })}
     </Contain>
   );
