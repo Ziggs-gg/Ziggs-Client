@@ -4,16 +4,19 @@ import { Link, Route, Switch } from 'react-router-dom';
 import League from './components/league/League';
 import NavbarMain from './components/navbar/navbar_main';
 import MainSchedule from './components/schedule/MainSchedule';
-import ShowLeague from './components/navbar/ShowLeague';
+
 import styled from 'styled-components';
 function App() {
   return (
     <div className="App">
       <NavbarMain />
-      <Route path="/League">
+      <Route exact path="/">
+        랜딩페이지
+      </Route>
+      <Route path="/League/LCK">
         <League />
       </Route>
-      <Route path="/match/:leaguename">
+      <Route path="/match/LCK">
         <MainSchedule />
       </Route>
     </div>

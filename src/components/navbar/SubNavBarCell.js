@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../App.css';
 import styled from 'styled-components';
-
+import { Link, Route, Switch } from 'react-router-dom';
 let CellContainer = styled.div`
   display: flex;
   flex-direction: row;

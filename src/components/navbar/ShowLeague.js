@@ -3,6 +3,7 @@ import '../../App.css';
 import styled from 'styled-components';
 import Data from '../../data/LeagueData.js';
 import SubNavBarCell_League from './SubNavBarCell_League.js';
+import { Link } from 'react-router-dom';
 
 function ShowLeague(props) {
   let Image = styled.div`
@@ -63,15 +64,27 @@ function ShowLeague(props) {
       </Maintitle>
       <Leaguetitle>메이저리그</Leaguetitle>
       {majorLeague.map((data, index) => {
-        return <SubNavBarCell_League leagues={data} key={index} />;
+        return (
+          <Link to={'/league/' + data.name}>
+            <SubNavBarCell_League leagues={data} key={index} />
+          </Link>
+        );
       })}
       <Leaguetitle>마이너리그</Leaguetitle>
       {minorLeague.map((data, index) => {
-        return <SubNavBarCell_League leagues={data} key={index} />;
+        return (
+          <Link to={'/league/' + data.name}>
+            <SubNavBarCell_League leagues={data} key={index} />
+          </Link>
+        );
       })}
       <Leaguetitle>국제대회</Leaguetitle>
       {worldLeague.map((data, index) => {
-        return <SubNavBarCell_League leagues={data} key={index} />;
+        return (
+          <Link to={'/league/' + data.name}>
+            <SubNavBarCell_League leagues={data} key={index} />
+          </Link>
+        );
       })}
     </div>
   );
