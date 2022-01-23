@@ -7,6 +7,7 @@ import SeasonButtonCell from './SeasonButtonCell';
 import TeamLogoCell from './TeamLogoCell';
 import ShowLeagueSchedule from './ShowLeagueSchedule';
 import Standing from './Standing';
+import ShowLeague from '../navbar/ShowLeague.js';
 function League(props) {
   let Seasons_selection = styled.div`
     display: flex;

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import '../../App.css';
 import styled from 'styled-components';
 import Data from '../../data/LeagueData.js';
-import SubNabBarCell from './SubNavBarCell.js';
+import SubNavBarCell_League from './SubNavBarCell_League.js';
 
 function ShowLeague(props) {
   let Image = styled.div`
@@ -46,6 +46,7 @@ function ShowLeague(props) {
   const majorLeague = leagueData.filter((leagueData) => leagueData.division == 'major');
   const minorLeague = leagueData.filter((leagueData) => leagueData.division == 'minor');
   const worldLeague = leagueData.filter((leagueData) => leagueData.division == 'world');
+
   return (
     <div className="navbar-contain">
       <Maintitle>
@@ -62,15 +63,15 @@ function ShowLeague(props) {
       </Maintitle>
       <Leaguetitle>메이저리그</Leaguetitle>
       {majorLeague.map((data, index) => {
-        return <SubNabBarCell leagues={data} key={index} />;
+        return <SubNavBarCell_League leagues={data} key={index} />;
       })}
       <Leaguetitle>마이너리그</Leaguetitle>
       {minorLeague.map((data, index) => {
-        return <SubNabBarCell leagues={data} key={index} />;
+        return <SubNavBarCell_League leagues={data} key={index} />;
       })}
       <Leaguetitle>국제대회</Leaguetitle>
       {worldLeague.map((data, index) => {
-        return <SubNabBarCell leagues={data} key={index} />;
+        return <SubNavBarCell_League leagues={data} key={index} />;
       })}
     </div>
   );
