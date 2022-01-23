@@ -64,7 +64,11 @@ function ShowMatch(props) {
       </Maintitle>
       <Leaguetitle>메이저리그</Leaguetitle>
       {majorLeague.map((data, index) => {
-        return <a src={`match/${data.name}`}><SubNabBarCell leagues={data} key={index} />;</a>
+        return (
+          <a src={`match/${data.name}`}>
+            <SubNabBarCell leagues={data} key={index} />
+          </a>
+        );
       })}
       <Leaguetitle>마이너리그</Leaguetitle>
       {minorLeague.map((data, index) => {
