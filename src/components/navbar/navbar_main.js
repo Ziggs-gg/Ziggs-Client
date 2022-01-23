@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
-import { Link, Route, Switch } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, Route, Switch, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 import ShowPlayer from './ShowPlayer';
 import ShowTeam from './ShowTeam';
 import ShowLeague from './ShowLeague';
 import ShowMatch from './ShowMatch';
 import { ReactComponent as Schedule } from '../../img/Schedule.svg';
+
 let Navbar = styled.div`
   display: flex;
 `;
@@ -114,11 +115,9 @@ let Schedule_icon = styled(Schedule)`
     stroke: #f3f3f3;
   }
 `;
-function NavbarMain() {
-  let [modalMatch, setmodalMatch] = useState(false);
-  let [modalLeague, setmodalLeague] = useState(false);
-  let [modalTeam, setmodalTeam] = useState(false);
-  let [modalPlayer, setmodalPlayer] = useState(false);
+
+function NavbarMain(props) {
+  const loc = useLocation();
 
   return (
     <Navbar>
@@ -138,72 +137,42 @@ function NavbarMain() {
           </Search_bar_form>
         </Search_bar_container>
         <List>
-          <a href='#'>
-            <List_item
-              onClick={() => {
-                setmodalMatch(!modalMatch);
-                setmodalLeague(false);
-                setmodalPlayer(false);
-                setmodalTeam(false);
-              }}>
+          <Link to="/match">
+            <List_item>
               <Schedule_icon />
               <List_item_text>경기일정</List_item_text>
             </List_item>
-          </a>
-          <a href="#">
-            <List_item
-              onClick={() => {
-                setmodalLeague(false);
-                setmodalPlayer(false);
-                setmodalTeam(false);
-                setmodalMatch(false);
-              }}>
+          </Link>
+          <Link to="/compare">
+            <List_item>
               <img src="img/Stat_Comparisons.svg" />
               <List_item_text>통계비교</List_item_text>
             </List_item>
-          </a>
+          </Link>
           <Link to="/league">
-            <List_item
-              onClick={() => {
-                setmodalLeague(!modalLeague);
-                setmodalMatch(false);
-                setmodalPlayer(false);
-                setmodalTeam(false);
-              }}>
+            <List_item>
               <img src="img/Leagues.svg" />
               <List_item_text>리그보기</List_item_text>
             </List_item>
           </Link>
-          <a href="#">
-            <List_item
-              onClick={() => {
-                setmodalTeam(!modalTeam);
-                setmodalLeague(false);
-                setmodalPlayer(false);
-                setmodalMatch(false);
-              }}>
+          <Link to="/teams">
+            <List_item>
               <img src="img/Teams.svg" />
               <List_item_text>구단보기</List_item_text>
             </List_item>
-          </a>
-          <a href="#">
-            <List_item
-              onClick={() => {
-                setmodalPlayer(!modalPlayer);
-                setmodalLeague(false);
-                setmodalTeam(false);
-                setmodalMatch(false);
-              }}>
+          </Link>
+          <Link to="/player">
+            <List_item>
               <img src="img/Players.svg" />
               <List_item_text>선수보기</List_item_text>
             </List_item>
-          </a>
+          </Link>
         </List>
       </Navbar_container>
-      {modalMatch == true ? <ShowMatch setmodalMatch={setmodalMatch} /> : null}
-      {modalLeague == true ? <ShowLeague setmodalLeague={setmodalLeague} /> : null}
-      {modalTeam == true ? <ShowTeam setmodalTeam={setmodalTeam} /> : null}
-      {modalPlayer == true ? <ShowPlayer setmodalPlayer={setmodalPlayer} /> : null}
+      {loc.pathname == '/match' ? <ShowMatch /> : null}
+      {loc.pathname == '/league' ? <ShowLeague /> : null}
+      {loc.pathname == '/teams' ? <ShowTeam /> : null}
+      {loc.pathname == '/player' ? <ShowPlayer /> : null}
     </Navbar>
   );
 }

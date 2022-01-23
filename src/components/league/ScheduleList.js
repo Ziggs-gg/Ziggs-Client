@@ -68,11 +68,7 @@ function ScheduleList(props) {
   let team1Opacity = 0.5;
   let team2Opacity = 0.5;
 
-  if (team1score < team2score) {
-    team2Opacity = 1;
-  } else {
-    team1Opacity = 1;
-  }
+  team1score < team2score ? (team2Opacity = 1) : (team1Opacity = 1);
 
   return (
     <Contain>

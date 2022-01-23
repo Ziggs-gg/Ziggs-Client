@@ -63,15 +63,15 @@ function ShowMatch(props) {
       </Maintitle>
       <Leaguetitle>메이저리그</Leaguetitle>
       {majorLeague.map((data, index) => {
-        return <SubNabBarCell leagues={data} />;
+        return <SubNabBarCell leagues={data} key={index} />;
       })}
       <Leaguetitle>마이너리그</Leaguetitle>
       {minorLeague.map((data, index) => {
-        return <SubNabBarCell leagues={data} />;
+        return <SubNabBarCell leagues={data} key={index} />;
       })}
       <Leaguetitle>국제대회</Leaguetitle>
       {worldLeague.map((data, index) => {
-        return <SubNabBarCell leagues={data} />;
+        return <SubNabBarCell leagues={data} key={index} />;
       })}
     </div>
   );
