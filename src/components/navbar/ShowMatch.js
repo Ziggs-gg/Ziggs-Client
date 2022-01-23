@@ -54,12 +54,6 @@ function ShowMatch(props) {
           <img src="../img/Schedule.svg" />
         </Image>
         <Title>경기일정</Title>
-        <Close
-          onClick={() => {
-            props.setmodalMatch(false);
-          }}>
-          <img src="../img/vector_36.svg" />
-        </Close>
       </Maintitle>
       <Leaguetitle>메이저리그</Leaguetitle>
       {majorLeague.map((data, index) => {

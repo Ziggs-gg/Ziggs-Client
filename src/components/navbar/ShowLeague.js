@@ -54,12 +54,6 @@ function ShowLeague(props) {
           <img src="../img/vector_17.svg" />
         </Image>
         <Title>리그보기</Title>
-        <Close
-          onClick={() => {
-            props.setmodalLeague(false);
-          }}>
-          <img src="../img/vector_36.svg" />
-        </Close>
       </Maintitle>
       <Leaguetitle>메이저리그</Leaguetitle>
       {majorLeague.map((data, index) => {

@@ -67,12 +67,6 @@ function ShowPlayer(props) {
           <img src="../img/vector_17.svg" />
         </Image>
         <Title>선수보기</Title>
-        <Close
-          onClick={() => {
-            props.setmodalPlayer(false);
-          }}>
-          <img src="../img/vector_36.svg" />
-        </Close>
       </Maintitle>
       <Subcontain>
         <Click>

@@ -169,10 +169,10 @@ function NavbarMain(props) {
           </Link>
         </List>
       </Navbar_container>
-      {loc.pathname == '/match' ? <ShowMatch /> : null}
-      {loc.pathname == '/league' ? <ShowLeague /> : null}
-      {loc.pathname == '/teams' ? <ShowTeam /> : null}
-      {loc.pathname == '/player' ? <ShowPlayer /> : null}
+      {loc.pathname.includes('/match') ? <ShowMatch /> : null}
+      {loc.pathname.includes('/league') ? <ShowLeague /> : null}
+      {loc.pathname.includes('/teams') ? <ShowTeam /> : null}
+      {loc.pathname.includes('/player') ? <ShowPlayer /> : null}
     </Navbar>
   );
 }

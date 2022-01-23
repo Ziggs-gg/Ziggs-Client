@@ -97,12 +97,6 @@ function ShowTeam(props) {
           <img src="../img/Teams.svg" />
         </Image>
         <Title>구단보기</Title>
-        <Close
-          onClick={() => {
-            props.setmodalTeam(false);
-          }}>
-          <img src="../img/vector_36.svg" />
-        </Close>
       </Maintitle>
       <UpperMenu>
         <LeagueList>

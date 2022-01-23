@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="App">
       <NavbarMain />
-      <Route path="/League">
+      <Route path="/league">
         <League />
       </Route>
     </div>
