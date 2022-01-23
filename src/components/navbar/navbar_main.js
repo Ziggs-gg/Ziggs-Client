@@ -118,7 +118,9 @@ let Schedule_icon = styled(Schedule)`
 
 function NavbarMain(props) {
   const loc = useLocation();
-
+  useEffect(()=>{
+    console.log(loc);
+  })
   return (
     <Navbar>
       <Navbar_container>
@@ -169,7 +171,7 @@ function NavbarMain(props) {
           </Link>
         </List>
       </Navbar_container>
-      {loc.pathname == '/match' ? <ShowMatch /> : null}
+      {loc.pathname.includes("/match")? <ShowMatch /> : null}
       {loc.pathname == '/league' ? <ShowLeague /> : null}
       {loc.pathname == '/teams' ? <ShowTeam /> : null}
       {loc.pathname == '/player' ? <ShowPlayer /> : null}
