@@ -1,4 +1,4 @@
-import react, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import '../../App.css';
 import styled from 'styled-components';
 import SeasonData from '../../data/SeasonData.js';
@@ -7,7 +7,7 @@ import SeasonButtonCell from './SeasonButtonCell';
 import TeamLogoCell from './TeamLogoCell';
 import ShowLeagueSchedule from './ShowLeagueSchedule';
 import Standing from './Standing';
-import ShowLeague from '../navbar/ShowLeague.js';
+
 function League(props) {
   let Seasons_selection = styled.div`
     display: flex;
@@ -106,7 +106,7 @@ function League(props) {
   let [TeamsData, setTeamsData] = useState(TeamData);
 
   return (
-    <div className="main-contain">
+    <div className="main-contain" style={{ padding: '0px 11px' }}>
       <Seasons_selection>
         <Left_Buttons>
           <img src="../img/Arrows_Left.svg" width={24} />
