@@ -1,6 +1,7 @@
 import React from 'react';
 import '../../App.css';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 
 let Contain = styled.div`
   margin-top: 30px;
@@ -41,13 +42,23 @@ let CellTextPlayerName = styled.span`
 function PlayerList() {
   return (
     <Contain>
+      <Link to = "/player">
+        <Playerlist>
+          <img src="../img/AF.svg"></img>
+          <TextContain>
+            <CellTextRole>Role</CellTextRole>
+            <CellTextPlayerName>Player Name</CellTextPlayerName>
+          </TextContain>
+          <img src="../img/KHAN.svg"></img>
+        </Playerlist>
+      </Link>
       <Playerlist>
         <img src="../img/AF.svg"></img>
         <TextContain>
           <CellTextRole>Role</CellTextRole>
           <CellTextPlayerName>Player Name</CellTextPlayerName>
         </TextContain>
-        <img src="../img/teamlogo.svg"></img>
+        <img src="../img/KHAN.svg"></img>
       </Playerlist>
       <Playerlist>
         <img src="../img/AF.svg"></img>
@@ -55,15 +66,7 @@ function PlayerList() {
           <CellTextRole>Role</CellTextRole>
           <CellTextPlayerName>Player Name</CellTextPlayerName>
         </TextContain>
-        <img src="../img/teamlogo.svg"></img>
-      </Playerlist>
-      <Playerlist>
-        <img src="../img/AF.svg"></img>
-        <TextContain>
-          <CellTextRole>Role</CellTextRole>
-          <CellTextPlayerName>Player Name</CellTextPlayerName>
-        </TextContain>
-        <img src="../img/teamlogo.svg"></img>
+        <img src="../img/KHAN.svg"></img>
       </Playerlist>
     </Contain>
   );

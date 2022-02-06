@@ -61,7 +61,7 @@ function ShowPlayer(props) {
   `;
 
   return (
-    <Contain>
+    <div className='navbar-contain'>
       <Maintitle>
         <Image>
           <img src="../img/vector_17.svg" />
@@ -130,7 +130,7 @@ function ShowPlayer(props) {
         </Click>
       </Subcontain>
       <PlayerList />
-    </Contain>
+    </div>
   );
 }
 
