@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import '../../App.css';
 import styled from 'styled-components';
 import Data from '../../data/LeagueData.js';
+
 import SubNabBarCell_League from './SubNavBarCell_League';
 import { Link } from 'react-router-dom';
 
@@ -65,7 +66,7 @@ function ShowMatch(props) {
       <Leaguetitle>메이저리그</Leaguetitle>
       {majorLeague.map((data, index) => {
         return (
-          <Link to={'/match/' + data.name}>
+          <Link key={index} to={'/match/' + data.name}>
             <SubNabBarCell_League leagues={data} key={index} />
           </Link>
         );
@@ -73,7 +74,7 @@ function ShowMatch(props) {
       <Leaguetitle>마이너리그</Leaguetitle>
       {minorLeague.map((data, index) => {
         return (
-          <Link to={'/match/' + data.name}>
+          <Link key={index} to={'/match/' + data.name}>
             <SubNabBarCell_League leagues={data} key={index} />
           </Link>
         );
@@ -81,7 +82,7 @@ function ShowMatch(props) {
       <Leaguetitle>국제대회</Leaguetitle>
       {worldLeague.map((data, index) => {
         return (
-          <Link to={'/match/' + data.name}>
+          <Link key={index} key={index} to={'/match/' + data.name}>
             <SubNabBarCell_League leagues={data} key={index} />
           </Link>
         );

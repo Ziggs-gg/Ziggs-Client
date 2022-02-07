@@ -11,6 +11,7 @@ import { ReactComponent as KT } from '../../img/KT.svg';
 import { ReactComponent as T1 } from '../../img/T1.svg';
 import { ReactComponent as NS } from '../../img/NS.svg';
 import { ReactComponent as SB } from '../../img/SB.svg';
+import { Link } from 'react-router-dom';
 function ShowTeam(props) {
   let Maintitle = styled.div`
     display: flex;
@@ -208,13 +209,15 @@ function ShowTeam(props) {
             <CellTextTeams>NongShim REDFORCE</CellTextTeams>
           </CellText>
         </TeamCell>
-        <TeamCell>
-          <T1 />
-          <CellText>
-            <CellTextLeague>LCK</CellTextLeague>
-            <CellTextTeams>T1</CellTextTeams>
-          </CellText>
-        </TeamCell>
+        <Link to="/teams/T1">
+          <TeamCell>
+            <T1 />
+            <CellText>
+              <CellTextLeague>LCK</CellTextLeague>
+              <CellTextTeams>T1</CellTextTeams>
+            </CellText>
+          </TeamCell>
+        </Link>
       </TeamList>
     </div>
   );

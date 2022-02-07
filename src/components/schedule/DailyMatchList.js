@@ -1,19 +1,16 @@
-import React,{ useState } from 'react';
+import React, { useState } from 'react';
 import '../../App.css';
 import styled from 'styled-components';
 
-
-
 function DailyMatchList(props) {
-
   let MatchContent = styled.div`
     display: flex;
     justify-content: space-between;
     height: 80px;
     border-bottom: solid 1px #838381;
-    :hover{
-    background: #838381;
-  }
+    :hover {
+      background: #838381;
+    }
   `;
 
   let MatchTime = styled.span`
@@ -45,13 +42,13 @@ function DailyMatchList(props) {
   `;
 
   let TeamAwayName = styled.span`
-  font-size: 16px;
-  font-weight: 500;
-  padding-top: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    padding-top: 8px;
   `;
 
   let TeamAwayLogo = styled.figure`
-  margin: 0 10px 0 0;
+    margin: 0 10px 0 0;
   `;
 
   let MatchScore = styled.div`
@@ -74,15 +71,15 @@ function DailyMatchList(props) {
   `;
 
   let LeagueLogo = styled.figure`
-      margin: 0 25px 0 0;
-      padding-left: 52px;
+    margin: 0 25px 0 0;
+    padding-left: 52px;
   `;
 
   let LeagueText = styled.span`
     font-size: 14px;
     font-weight: 350;
   `;
-  
+
   let SeasonText = styled.span`
     font-size: 12px;
     font-weight: 350;
@@ -105,35 +102,32 @@ function DailyMatchList(props) {
     team1Opacity = 1;
   }
 
-
-  return(
+  return (
     <MatchContent>
-      <MatchTime>{ props.timematch.time }</MatchTime>
+      <MatchTime>{props.timematch.time}</MatchTime>
       <TeamContain>
         <TeamNameAndLogo style={{ opacity: team1Opacity }}>
-          <TeamHomeName>
-            {props.timematch.home}
-          </TeamHomeName>
+          <TeamHomeName>{props.timematch.home}</TeamHomeName>
           <TeamHomeLogo>
             <img src={`../img/${props.timematch.home}.svg`} alt="" />
           </TeamHomeLogo>
         </TeamNameAndLogo>
         <MatchScore>
-          <ScoreText>{props.timematch.homescore} - {props.timematch.awayscore}</ScoreText>
+          <ScoreText>
+            {props.timematch.homescore} - {props.timematch.awayscore}
+          </ScoreText>
           <ScoreBo>BO3</ScoreBo>
         </MatchScore>
         <TeamNameAndLogo style={{ opacity: team2Opacity }}>
           <TeamAwayLogo>
             <img src={`../img/${props.timematch.away}.svg`} alt="" />
           </TeamAwayLogo>
-          <TeamAwayName>
-            {props.timematch.away}
-          </TeamAwayName>
+          <TeamAwayName>{props.timematch.away}</TeamAwayName>
         </TeamNameAndLogo>
       </TeamContain>
       <LeagueAndSeason>
         <LeagueLogo>
-          <img src='../img/LCK_Logo.svg' alt="" />
+          <img src="../img/LCK_Logo.svg" alt="" />
           <LeagueText>LCK</LeagueText>
         </LeagueLogo>
         <SeasonText>2021 SPRING WEEK</SeasonText>

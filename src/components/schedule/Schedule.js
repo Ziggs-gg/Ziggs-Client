@@ -29,7 +29,7 @@ function Schedule(props) {
       </Date>
       {timematch.map((a, i) => {
         return (
-          <Link to="/">
+          <Link key={i} to={`/match/LCK/${props.match.month}-${props.match.work}-${props.match.day}-${timematch[i].home}-VS-${timematch[i].away}`}>
             <DailyMatchList timematch={timematch[i]} i={i} key={i} />
           </Link>
         );
