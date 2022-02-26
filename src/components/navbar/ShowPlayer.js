@@ -1,8 +1,9 @@
-import React from 'react';
+import {React,useState} from 'react';
 import '../../App.css';
 import styled from 'styled-components';
 import PlayerList from './PlayerList';
-
+import League_Data from '../../data/LeagueData.js';
+import Position_Data from '../../data/Position.js';
 function ShowPlayer(props) {
   let Contain = styled.div`
     background: #131310;
@@ -60,74 +61,36 @@ function ShowPlayer(props) {
     cursor: pointer;
   `;
 
+  const [leagueData, setleagueData] = useState(League_Data);
+  const [positionData, setpositionData] = useState(Position_Data);
+
   return (
     <div className='navbar-contain'>
       <Maintitle>
         <Image>
-          <img src="../img/vector_17.svg" />
+          <img src={require("../../img/icon/Players/Two-Tone.svg").default} />
         </Image>
         <Title>선수보기</Title>
         <Close
           onClick={() => {
             props.setmodalPlayer(false);
           }}>
-          <img src="../img/vector_36.svg" />
+          <img src={require("../../img/icon/Arrow/Arrows.svg").default} />
         </Close>
       </Maintitle>
       <Subcontain>
-        <Click>
-          <img src="../img/LCK_Logo.svg" />
-        </Click>
-        <Click>
-          <img src="../img/LEC_Logo.svg" />
-        </Click>
-        <Click>
-          <img src="../img/LPL_Logo.svg" />
-        </Click>
-        <Click>
-          <img src="../img/LCS_Logo.svg" />
-        </Click>
-        <Click>
-          <img src="../img/CBLOL_Logo.svg" />
-        </Click>
-        <Click>
-          <img src="../img/LCL_Logo.svg" />
-        </Click>
-        <Click>
-          <img src="../img/LCO_Logo.svg" />
-        </Click>
-        <Click>
-          <img src="../img/LJL_Logo.svg" />
-        </Click>
-        <Click>
-          <img src="../img/LLA_Logo.svg" />
-        </Click>
-        <Click>
-          <img src="../img/PCS_Logo.svg" />
-        </Click>
-        <Click>
-          <img src="../img/TCL_Logo.svg" />
-        </Click>
-        <Click>
-          <img src="../img/VCS_Logo.svg" />
-        </Click>
+        {leagueData.map( league =>
+            <Click>
+              <img src={require(`../../img/league-logo/${league.name}_Logo.svg`).default} />
+            </Click>
+        )}
       </Subcontain>
       <Subcontain>
-        <Click>
-          <img src="../img/TOP.svg" />
-        </Click>
-        <Click>
-          <img src="../img/JUG.svg" />
-        </Click>
-        <Click>
-          <img src="../img/MID.svg" />
-        </Click>
-        <Click>
-          <img src="../img/BOT.svg" />
-        </Click>
-        <Click>
-          <img src="../img/SUP.svg" />
-        </Click>
+        {positionData.map( positions =>
+              <Click>
+                <img src={require(`../../img/position/${positions.position}.svg`).default} />
+              </Click>
+        )}
       </Subcontain>
       <PlayerList />
     </div>

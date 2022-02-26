@@ -15,7 +15,7 @@ function TeamLogoCell(props) {
   let Logo = styled.img``;
   return (
     <CellContainer>
-      <Logo src={`../../img/${props.teams.short_name}.svg`} width={40} />
+      <Logo src={`../../img/teams-logo/${props.teams.short_name}.svg`} width={40} />
     </CellContainer>
   );
 }

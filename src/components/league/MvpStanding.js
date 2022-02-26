@@ -60,8 +60,8 @@ function MvpStanding() {
         <StandingTableTr>
           <Ranking>1</Ranking>
           <RankingChange>▲00</RankingChange>
-          <TeamLogo><img src='../img/DWG.svg' alt=''/></TeamLogo>
-          <PositionLogo><img src='../img/MID.svg' alt='' /></PositionLogo>
+          <TeamLogo><img src="../../img/teams-logo/DWG.svg" alt=''/></TeamLogo>
+          <PositionLogo><img src="../../img/position/MID.svg" alt='' /></PositionLogo>
           <PlayerName>DK ShowMaker</PlayerName>
           <MvpPoint>1000pts</MvpPoint>
         </StandingTableTr>

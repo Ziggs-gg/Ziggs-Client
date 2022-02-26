@@ -32,7 +32,7 @@ let CellTextNation = styled.span`
 function SubNavBarCell_League(props) {
   return (
     <CellContainer>
-      <CellLogo src={`../img/${props.leagues.name}_Logo.svg`} width={24} />
+      <CellLogo src={require(`../../img/league-logo/${props.leagues.name}_Logo.svg`).default} width={24} />
       <CellText>
         <CellTextName>{props.leagues.name}</CellTextName>
         <CellTextNation>{props.leagues.nation}</CellTextNation>

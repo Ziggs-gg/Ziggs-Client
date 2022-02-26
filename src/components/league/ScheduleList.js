@@ -77,7 +77,7 @@ function ScheduleList(props) {
       </TimeAndBo>
       <TeamNameAndLogo style={{ opacity: team1Opacity }}>
         <TeamHomeLogo>
-          <img src={`../img/${props.match.team1}.svg`} alt="" />
+          <img src={`../../img/teams-logo/${props.match.team1}.svg`} alt="" />
         </TeamHomeLogo>
         <TeamHomeName>DRX</TeamHomeName>
       </TeamNameAndLogo>
@@ -87,7 +87,7 @@ function ScheduleList(props) {
       <TeamNameAndLogo style={{ opacity: team2Opacity }}>
         <TeamAwayName>GEN</TeamAwayName>
         <TeamAwayLogo>
-          <img src={`../img/${props.match.team2}.svg`} alt="" />
+          <img src={`../../img/teams-logo/${props.match.team2}.svg`} alt="" />
         </TeamAwayLogo>
       </TeamNameAndLogo>
     </Contain>

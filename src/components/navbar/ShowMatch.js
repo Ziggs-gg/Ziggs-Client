@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import '../../App.css';
 import styled from 'styled-components';
 import Data from '../../data/LeagueData.js';
-import SubNabBarCell from './SubNavBarCell.js';
-import { Link, Route } from 'react-router-dom';
+import SubNabBarCell_League from './SubNavBarCell_League';
+import { Link } from 'react-router-dom';
+
 
 function ShowMatch(props) {
   let Image = styled.div`
@@ -52,27 +53,39 @@ function ShowMatch(props) {
     <div className="navbar-contain">
       <Maintitle>
         <Image>
-          <img src="../img/Schedule.svg" />
+          <img src={require("../../img/icon/Schedule/Two-Tone.svg").default} />
         </Image>
         <Title>경기일정</Title>
         <Close
           onClick={() => {
             props.setmodalMatch(false);
           }}>
-          <img src="../img/vector_36.svg" />
+          <img src={require("../../img/icon/Arrow/Arrows.svg").default} />
         </Close>
       </Maintitle>
       <Leaguetitle>메이저리그</Leaguetitle>
       {majorLeague.map((data, index) => {
-        return <Link to ={'/match/'+data.name}><SubNabBarCell leagues={data} key={index} /></Link>
+        return (
+          <Link to={'/match/' + data.name}>
+            <SubNabBarCell_League leagues={data} key={index} />
+          </Link>
+        );
       })}
       <Leaguetitle>마이너리그</Leaguetitle>
       {minorLeague.map((data, index) => {
-        return <Link to={'/match/'+data.name}><SubNabBarCell leagues={data} key={index} /></Link>
+        return (
+          <Link to={'/match/' + data.name}>
+            <SubNabBarCell_League leagues={data} key={index} />
+          </Link>
+        );
       })}
       <Leaguetitle>국제대회</Leaguetitle>
       {worldLeague.map((data, index) => {
-        return <Link to={'/match/'+data.name}><SubNabBarCell leagues={data} key={index} /></Link>
+        return (
+          <Link to={'/match/' + data.name}>
+            <SubNabBarCell_League leagues={data} key={index} />
+          </Link>
+        );
       })}
     </div>
   );

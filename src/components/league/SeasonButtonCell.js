@@ -14,6 +14,7 @@ function SeasonButtonCell(props) {
       border-bottom: 1px solid red;
       opacity: 1;
     }
+    z-index: 2;
   `;
   let CellText = styled.span`
     font-size: 12px;

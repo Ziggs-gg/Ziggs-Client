@@ -1,16 +1,17 @@
-import React from 'react';
+import {React, useState} from 'react';
 import '../../App.css';
 import styled from 'styled-components';
-import { ReactComponent as AF } from '../../img/AF.svg';
-import { ReactComponent as BRO } from '../../img/BRO.svg';
-import { ReactComponent as DRX } from '../../img/DRX.svg';
-import { ReactComponent as DWG } from '../../img/DWG.svg';
-import { ReactComponent as GENG } from '../../img/GENG.svg';
-import { ReactComponent as HLE } from '../../img/HLE.svg';
-import { ReactComponent as KT } from '../../img/KT.svg';
-import { ReactComponent as T1 } from '../../img/T1.svg';
-import { ReactComponent as NS } from '../../img/NS.svg';
-import { ReactComponent as SB } from '../../img/SB.svg';
+import League_Data from '../../data/LeagueData.js';
+import { ReactComponent as AF } from '../../img/teams-logo/AF.svg';
+import { ReactComponent as BRO } from '../../img/teams-logo/BRO.svg';
+import { ReactComponent as DRX } from '../../img/teams-logo/DRX.svg';
+import { ReactComponent as DWG } from '../../img/teams-logo/DWG.svg';
+import { ReactComponent as GENG } from '../../img/teams-logo/GENG.svg';
+import { ReactComponent as HLE } from '../../img/teams-logo/HLE.svg';
+import { ReactComponent as KT } from '../../img/teams-logo/KT.svg';
+import { ReactComponent as T1 } from '../../img/teams-logo/T1.svg';
+import { ReactComponent as NS } from '../../img/teams-logo/NS.svg';
+import { ReactComponent as SB } from '../../img/teams-logo/SB.svg';
 function ShowTeam(props) {
   let Maintitle = styled.div`
     display: flex;
@@ -58,8 +59,14 @@ function ShowTeam(props) {
       display: none;
     }
   `;
-  let TeamButton = styled.span`
-    margin-right: 8px;
+  let TeamButton = styled.button`
+    background: #131310;
+    margin: 0 8px 8px 0;
+    height: 30px;
+    width: 30px;
+    border: none;
+    outline: none;
+    cursor: pointer;
   `;
 
   let TeamList = styled.div`
@@ -90,58 +97,31 @@ function ShowTeam(props) {
     font-weight: 500;
     line-height: 23px;
   `;
+
+  const [leagueData, setleagueData] = useState(League_Data);
+
   return (
     <div className="navbar-contain">
       <Maintitle>
         <Image>
-          <img src="../img/Teams.svg" />
+        <img src={require("../../img/icon/Teams/Two-Tone.svg").default} />
         </Image>
         <Title>구단보기</Title>
         <Close
           onClick={() => {
             props.setmodalTeam(false);
           }}>
-          <img src="../img/vector_36.svg" />
+          <img src={require("../../img/icon/Arrow/Arrows.svg").default} />
         </Close>
       </Maintitle>
       <UpperMenu>
         <LeagueList>
-          <TeamButton>
-            <img src="../img/LCK_LOGO.svg" />
-          </TeamButton>
-          <TeamButton>
-            <img src="../img/LPL_LOGO.svg" />
-          </TeamButton>
-          <TeamButton>
-            <img src="../img/LEC_LOGO.svg" />
-          </TeamButton>
-          <TeamButton>
-            <img src="../img/LCS_LOGO.svg" />
-          </TeamButton>
-          <TeamButton>
-            <img src="../img/CBLOL_LOGO.svg" />
-          </TeamButton>
-          <TeamButton>
-            <img src="../img/LCL_LOGO.svg" />
-          </TeamButton>
-          <TeamButton>
-            <img src="../img/LCO_LOGO.svg" />
-          </TeamButton>
-          <TeamButton>
-            <img src="../img/LJL_LOGO.svg" />
-          </TeamButton>
-          <TeamButton>
-            <img src="../img/LLA_LOGO.svg" />
-          </TeamButton>
-          <TeamButton>
-            <img src="../img/PCS_LOGO.svg" />
-          </TeamButton>
-          <TeamButton>
-            <img src="../img/TCL_LOGO.svg" />
-          </TeamButton>
-          <TeamButton>
-            <img src="../img/VCS_LOGO.svg" />
-          </TeamButton>
+          
+            {leagueData.map( league =>
+              <TeamButton>
+                <img src={require(`../../img/league-logo/${league.name}_Logo.svg`).default} />
+              </TeamButton>
+              )}
         </LeagueList>
       </UpperMenu>
       <TeamList>

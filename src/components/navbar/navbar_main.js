@@ -5,7 +5,13 @@ import ShowPlayer from './ShowPlayer';
 import ShowTeam from './ShowTeam';
 import ShowLeague from './ShowLeague';
 import ShowMatch from './ShowMatch';
-import { ReactComponent as Schedule } from '../../img/Schedule.svg';
+import { ReactComponent as Schedule } from '../../img/icon/Schedule/Two-Tone.svg';
+import Ziggs_Logo from '../../img/Logo.svg';
+import Searching from '../../img/icon/Searching.svg';
+import Compare from '../../img/icon/Stat-Comparisons/Two-Tone.svg';
+import Leagues from '../../img/icon/Leagues/Two-Tone.svg';
+import Teams from '../../img/icon/Teams/Two-Tone.svg';
+import Player from '../../img/icon/Players/Two-Tone.svg';
 
 let Navbar = styled.div`
   display: flex;
@@ -58,7 +64,7 @@ let Search_bar_input = styled.input`
   border: none;
   width: 117px;
   padding: 0;
-  margin-left: 25px;
+  margin-left: 15px;
   ::placeholder {
     font-size: 12px;
     color: rgba(243, 243, 243, 0.8);
@@ -125,19 +131,20 @@ function NavbarMain(props) {
   let [modalLeague,setmodalLeague] = useState(false);
   let [modalTeam,setmodalTeam] = useState(false);
   let [modalPlayer,setmodalPlayer] = useState(false);
+
   return (
     <Navbar>
       <Navbar_container>
         <a href="/">
           <Title>
-            <Logo src="img/LOGO.svg" />
+            <Logo src={Ziggs_Logo} />
             <Title_text>ZIGGS.GG</Title_text>
           </Title>
         </a>
         <Search_bar_container>
           <Search_bar_form action="">
             <Search_bar className="search-bar">
-              <img src="img/Searching.svg" alt="" />
+              <img src={Searching} alt="" />
               <Search_bar_input type="text" placeholder="검색어를 입력해주세요." />
             </Search_bar>
           </Search_bar_form>
@@ -155,8 +162,14 @@ function NavbarMain(props) {
               <List_item_text>경기일정</List_item_text>
             </List_item>
           <Link to="/compare">
-            <List_item>
-              <img src="img/Stat_Comparisons.svg" />
+            <List_item
+            onClick={()=>{
+              setmodalMatch(false)
+              setmodalLeague(false)
+              setmodalTeam(false)
+              setmodalPlayer(false)
+            }}>
+              <img src={Compare} />
               <List_item_text>통계비교</List_item_text>
             </List_item>
           </Link>
@@ -168,7 +181,7 @@ function NavbarMain(props) {
                 setmodalPlayer(false)
               }}
             >
-              <img src="img/Leagues.svg" />
+              <img src={Leagues} />
               <List_item_text>리그보기</List_item_text>
             </List_item>
             <List_item
@@ -179,7 +192,7 @@ function NavbarMain(props) {
                 setmodalPlayer(false)
               }}
             >
-              <img src="img/Teams.svg" />
+              <img src={Teams} />
               <List_item_text>구단보기</List_item_text>
             </List_item>
             <List_item
@@ -190,7 +203,7 @@ function NavbarMain(props) {
                 setmodalPlayer(!modalPlayer)
               }}
             >
-              <img src="img/Players.svg" />
+              <img src={Player} />
               <List_item_text>선수보기</List_item_text>
             </List_item>
         </List>
