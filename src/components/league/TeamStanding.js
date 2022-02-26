@@ -1,6 +1,7 @@
-import React,{ useState } from 'react';
+import React,{ useEffect, useState } from 'react';
 import '../../App.css';
 import styled from 'styled-components';
+import axios from 'axios';
 
 function TeamStanding() {
   
@@ -66,18 +67,45 @@ function TeamStanding() {
     font-weight: 500;
   `;
 
+  /*const [match, setmatch] = useState([]);
+
+  useEffect( () => {
+    axios.get('/api/match').then((response) => {
+      setmatch(response.data)
+      console.log(response.data);
+    }).catch(error => {
+      console.log(error);
+    })
+  },[])*/
+
+  const [teamStanding, setteamStanding] = useState([]);
+
+  useEffect( () => {
+    axios.get('/api/league/21-LCK-SPR').then((response) => {
+      setteamStanding(response.data)
+      console.log(response.data);
+    }).catch(error => {
+      console.log(error);
+    })
+  },[])
+
   return(
     <Contain>
       <Title>팀 순위</Title>
       <StandingTable>
-        <StandingTableTr>
-          <Ranking>1</Ranking>
-          <RankingChange>▲00</RankingChange>
-          <TeamLogo><img src='../img/DWG.svg' alt=''/></TeamLogo>
-          <TeamNameAndRecord><TeamName>DWG KIA</TeamName><Record>16승 - 2패</Record></TeamNameAndRecord>
-          <WinRate>89%</WinRate>
-          <VictoryPoint>+23</VictoryPoint>
-        </StandingTableTr>
+        {
+          teamStanding.map(
+            team => 
+            <StandingTableTr>
+              <Ranking>{team.ranking}</Ranking>
+              <RankingChange><img src="../../img/icon/Ranking-Ups/Filled.svg" width={16} height={16} />00</RankingChange>
+              <TeamLogo><img src={`../../img/teams-logo/${team.teamFullName}.svg`} alt=''/></TeamLogo>
+              <TeamNameAndRecord><TeamName>{team.teamFullName}</TeamName><Record>{team.matchWinCount}승 - {team.matchDefeatCount}패</Record></TeamNameAndRecord>
+              <WinRate>{team.winRate}%</WinRate>
+              <VictoryPoint>+23</VictoryPoint>
+            </StandingTableTr>
+          )
+        }
       </StandingTable>
     </Contain>
 

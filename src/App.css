@@ -25,6 +25,7 @@ a {
   height: 100vh;
   width: 297px;
   overflow-y: scroll;
+
   border-right: 0.5px solid rgba(243, 243, 243, 0.3);
 }
 .navbar-contain::-webkit-scrollbar {

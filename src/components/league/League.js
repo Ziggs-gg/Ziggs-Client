@@ -1,4 +1,4 @@
-import react, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import '../../App.css';
 import styled from 'styled-components';
 import SeasonData from '../../data/SeasonData.js';
@@ -7,7 +7,7 @@ import SeasonButtonCell from './SeasonButtonCell';
 import TeamLogoCell from './TeamLogoCell';
 import ShowLeagueSchedule from './ShowLeagueSchedule';
 import Standing from './Standing';
-import ShowLeague from '../navbar/ShowLeague.js';
+
 function League(props) {
   let Seasons_selection = styled.div`
     display: flex;
@@ -106,24 +106,24 @@ function League(props) {
   let [TeamsData, setTeamsData] = useState(TeamData);
 
   return (
-    <div className="main-contain">
+    <div className="main-contain" style={{ padding: '0px 11px' }}>
       <Seasons_selection>
         <Left_Buttons>
-          <img src="../img/Arrows_Left.svg" width={24} />
-          <img src="../img/Arrow_Left.svg" width={16} />
+          <img src={require("../../img/icon/Arrow/Arrows_Left.svg").default} width={24} />
+          <img src={require("../../img/icon/Arrow/Arrow_Left.svg").default} width={16} />
         </Left_Buttons>
         {seasonData.map((data, index) => {
           return <SeasonButtonCell seasons={data} index={index} key={index} />;
         })}
         <Right_Buttons>
-          <img src="../img/Arrow_Right.svg" width={16} />
-          <img src="../img/Arrows_Right.svg" width={24} />
+          <img src={require("../../img/icon/Arrow/Arrow_Right.svg").default} width={16} />
+          <img src={require("../../img/icon/Arrow/Arrows_Right.svg").default} width={24} />
         </Right_Buttons>
       </Seasons_selection>
       <Top_Banner>
         <Banner>
           <Title>
-            <LOGO src="../img/LCK_Logo.svg" width={114} />
+            <LOGO src={require("../../img/league-logo/LCK_Logo.svg").default} width={114} />
             <LeagueTitle>
               <LeagueName>League of Legends Champioship Korea</LeagueName>
               <SeasonName>LCK 2021 SPRING</SeasonName>

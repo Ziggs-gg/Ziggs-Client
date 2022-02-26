@@ -3,7 +3,7 @@ import '../../App.css';
 import styled from 'styled-components';
 import Data from '../../data/LeagueData.js';
 import SubNavBarCell_League from './SubNavBarCell_League.js';
-import { Link } from 'react-router-dom/cjs/react-router-dom.min';
+import { Link } from 'react-router-dom';
 
 function ShowLeague(props) {
   let Image = styled.div`
@@ -44,35 +44,47 @@ function ShowLeague(props) {
   `;
 
   const [leagueData, setleagueData] = useState(Data);
-  const majorLeague = leagueData.filter((leagueData) => leagueData.division == 'major');
-  const minorLeague = leagueData.filter((leagueData) => leagueData.division == 'minor');
-  const worldLeague = leagueData.filter((leagueData) => leagueData.division == 'world');
+  const majorLeague = leagueData.filter((leagueData) => leagueData.division === 'major');
+  const minorLeague = leagueData.filter((leagueData) => leagueData.division === 'minor');
+  const worldLeague = leagueData.filter((leagueData) => leagueData.division === 'world');
 
   return (
     <div className="navbar-contain">
       <Maintitle>
         <Image>
-          <img src="../img/vector_17.svg" />
+        <img src={require("../../img/icon/Leagues/Two-Tone.svg").default} />
         </Image>
         <Title>리그보기</Title>
         <Close
           onClick={() => {
             props.setmodalLeague(false);
           }}>
-          <img src="../img/vector_36.svg" />
+          <img src={require("../../img/icon/Arrow/Arrows.svg").default} />
         </Close>
       </Maintitle>
       <Leaguetitle>메이저리그</Leaguetitle>
       {majorLeague.map((data, index) => {
-        return <Link to={'/league/'+data.name}><SubNavBarCell_League leagues={data} key={index} /></Link>
+        return (
+          <Link to={'/league/' + data.name}>
+            <SubNavBarCell_League leagues={data} key={index} />
+          </Link>
+        );
       })}
       <Leaguetitle>마이너리그</Leaguetitle>
       {minorLeague.map((data, index) => {
-        return <Link to={'/league/'+data.name}><SubNavBarCell_League leagues={data} key={index} /></Link>
+        return (
+          <Link to={'/league/' + data.name}>
+            <SubNavBarCell_League leagues={data} key={index} />
+          </Link>
+        );
       })}
       <Leaguetitle>국제대회</Leaguetitle>
       {worldLeague.map((data, index) => {
-        return <Link to={'/league/'+data.name}><SubNavBarCell_League leagues={data} key={index} /></Link>
+        return (
+          <Link to={'/league/' + data.name}>
+            <SubNavBarCell_League leagues={data} key={index} />
+          </Link>
+        );
       })}
     </div>
   );
