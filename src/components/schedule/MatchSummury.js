@@ -86,15 +86,15 @@ function MatchSummury() {
   return (
     <div className="main-contain">
       <Banner>
-        <Back src={require('../../img/Arrow_Left.svg').default} />
+        <Back src={require('../../img/icon/Arrow/Arrow_Left.svg').default} />
         <Score_contain>
           <TeamLogo_contain>
-            <TeamLogo src={require('../../img/T1.svg').default}></TeamLogo>
+            <TeamLogo src={require('../../img/teams-logo/T1.svg').default}></TeamLogo>
             <HomeTeamName>T1</HomeTeamName>
           </TeamLogo_contain>
           <Score>2 - 0</Score>
           <TeamLogo_contain>
-            <TeamLogo src={require('../../img/DWG.svg').default}></TeamLogo>
+            <TeamLogo src={require('../../img/teams-logo/DWG.svg').default}></TeamLogo>
             <HomeTeamName>DWG</HomeTeamName>
           </TeamLogo_contain>
         </Score_contain>

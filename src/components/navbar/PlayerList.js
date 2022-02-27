@@ -2,6 +2,8 @@ import React from 'react';
 import '../../App.css';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
+import AF from '../../img/teams-logo/AF.svg';
+import KHAN from '../../img/players/KHAN.svg';
 
 let Contain = styled.div`
   margin-top: 30px;
@@ -44,30 +46,14 @@ function PlayerList() {
     <Contain>
       <Link to = "/player">
         <Playerlist>
-          <img src="../img/AF.svg"></img>
+          <img src={AF}></img>
           <TextContain>
             <CellTextRole>Role</CellTextRole>
             <CellTextPlayerName>Player Name</CellTextPlayerName>
           </TextContain>
-          <img src="../img/KHAN.svg"></img>
+          <img src={KHAN}></img>
         </Playerlist>
       </Link>
-      <Playerlist>
-        <img src="../img/AF.svg"></img>
-        <TextContain>
-          <CellTextRole>Role</CellTextRole>
-          <CellTextPlayerName>Player Name</CellTextPlayerName>
-        </TextContain>
-        <img src="../img/KHAN.svg"></img>
-      </Playerlist>
-      <Playerlist>
-        <img src="../img/AF.svg"></img>
-        <TextContain>
-          <CellTextRole>Role</CellTextRole>
-          <CellTextPlayerName>Player Name</CellTextPlayerName>
-        </TextContain>
-        <img src="../img/KHAN.svg"></img>
-      </Playerlist>
     </Contain>
   );
 }

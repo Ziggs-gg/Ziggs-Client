@@ -140,15 +140,15 @@ let [seasonData, setSeasonData] = useState(SeasonData);
     <div className ="main-contain">
       <Seasons_selection>
         <Left_Buttons>
-          <img src="../img/Arrows_Left.svg" width={24} />
-          <img src="../img/Arrow_Left.svg" width={16} />
+          <img src="../../img/icon/Arrow/Arrows_Left.svg" width={24} />
+          <img src="../../img/icon/Arrow/Arrow_Left.svg" width={16} />
         </Left_Buttons>
         {seasonData.map((data, index) => {
           return <SeasonButtonCell seasons={data} index={index} key={index} />;
         })}
         <Right_Buttons>
-          <img src="../img/Arrow_Right.svg" width={16} />
-          <img src="../img/Arrows_Right.svg" width={24} />
+          <img src="../../img/icon/Arrow/Arrow_Right.svg" width={16} />
+          <img src="../../img/icon/Arrow/Arrows_Right.svg" width={24} />
         </Right_Buttons>
       </Seasons_selection>
       <Player_profile_Image>
@@ -156,11 +156,11 @@ let [seasonData, setSeasonData] = useState(SeasonData);
         <Player_Profile>
           <Team_Name>LCK - DWG KIA</Team_Name>
           <Player_Nikname>
-            <Position_Image src ="../img/TOP.svg" alt='' />DK KHAN
+            <Position_Image src ="../../img/position/TOP.svg" alt='' />DK KHAN
           </Player_Nikname>
           <Player_Name>🇰🇷 김동하</Player_Name>
         </Player_Profile>
-        <Player_Image src='../img/KHAN.svg' alt='' />
+        <Player_Image src='../../img/players/KHAN.svg' alt='' />
       </Player_profile_Image>
       <Data_Contain_first>
         <Radar>

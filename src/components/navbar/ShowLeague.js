@@ -45,22 +45,22 @@ function ShowLeague(props) {
   `;
 
   const [leagueData, setleagueData] = useState(Data);
-  const majorLeague = leagueData.filter((leagueData) => leagueData.division == 'major');
-  const minorLeague = leagueData.filter((leagueData) => leagueData.division == 'minor');
-  const worldLeague = leagueData.filter((leagueData) => leagueData.division == 'world');
+  const majorLeague = leagueData.filter((leagueData) => leagueData.division === 'major');
+  const minorLeague = leagueData.filter((leagueData) => leagueData.division === 'minor');
+  const worldLeague = leagueData.filter((leagueData) => leagueData.division === 'world');
 
   return (
     <div className="navbar-contain">
       <Maintitle>
         <Image>
-          <img src="../img/vector_17.svg" />
+          <img src={require('../../img/icon/Leagues/Two-Tone.svg').default} />
         </Image>
         <Title>리그보기</Title>
         <Close
           onClick={() => {
             props.setmodalLeague(false);
           }}>
-          <img src="../img/vector_36.svg" />
+          <img src={require('../../img/icon/Arrow/Arrows.svg').default} />
         </Close>
       </Maintitle>
       <Leaguetitle>메이저리그</Leaguetitle>

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import '../../App.css';
 import styled from 'styled-components';
+import LCK_Logo from '../../img/league-logo/LCK_Logo.svg';
 
 function DailyMatchList(props) {
   let MatchContent = styled.div`
@@ -109,7 +110,7 @@ function DailyMatchList(props) {
         <TeamNameAndLogo style={{ opacity: team1Opacity }}>
           <TeamHomeName>{props.timematch.home}</TeamHomeName>
           <TeamHomeLogo>
-            <img src={`../img/${props.timematch.home}.svg`} alt="" />
+            <img src={require(`../../img/teams-logo/${props.timematch.home}.svg`).default} alt="" />
           </TeamHomeLogo>
         </TeamNameAndLogo>
         <MatchScore>
@@ -120,14 +121,15 @@ function DailyMatchList(props) {
         </MatchScore>
         <TeamNameAndLogo style={{ opacity: team2Opacity }}>
           <TeamAwayLogo>
-            <img src={`../img/${props.timematch.away}.svg`} alt="" />
+            <img src={require(`../../img/teams-logo/${props.timematch.away}.svg`).default} alt="" />
           </TeamAwayLogo>
           <TeamAwayName>{props.timematch.away}</TeamAwayName>
         </TeamNameAndLogo>
       </TeamContain>
       <LeagueAndSeason>
         <LeagueLogo>
-          <img src="../img/LCK_Logo.svg" alt="" />
+          <img src={LCK_Logo} />
+
           <LeagueText>LCK</LeagueText>
         </LeagueLogo>
         <SeasonText>2021 SPRING WEEK</SeasonText>

@@ -53,14 +53,14 @@ function ShowMatch(props) {
     <div className="navbar-contain">
       <Maintitle>
         <Image>
-          <img src="../img/Schedule.svg" />
+          <img src={require('../../img/icon/Schedule/Two-Tone.svg').default} />
         </Image>
         <Title>경기일정</Title>
         <Close
           onClick={() => {
             props.setmodalMatch(false);
           }}>
-          <img src="../img/vector_36.svg" />
+          <img src={require('../../img/icon/Arrow/Arrows.svg').default} />
         </Close>
       </Maintitle>
       <Leaguetitle>메이저리그</Leaguetitle>
