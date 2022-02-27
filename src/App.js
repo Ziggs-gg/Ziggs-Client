@@ -24,7 +24,7 @@ function App() {
 
       <Switch>
         <Route path="/league/:leaguename" component={League} />
-        <Route path="/match/:leaguename" component={MainSchedule} />
+        <Route exact path="/match/:leaguename" component={MainSchedule} />
         <Route path="/match/:leaguename/:matchData" component={MatchSummury} />
         <Route path="/player" component={Player} />
         <Route path="/teams/:teamname" component={Teams} />

@@ -50,7 +50,7 @@ function Teams() {
     z-index: 2;
   `;
   let Banner_Logo = styled.div`
-    background-image: url('../img/T1.svg');
+    background-image: url('../../img/teams-logo/T1.svg');
     width: 387px;
     height: 214px;
     background-repeat: no-repeat;
@@ -69,7 +69,7 @@ function Teams() {
   let Team_Logo_Info = styled.div`
     width: 114px;
     height: 114px;
-    background-image: url('../img/T1.svg');
+    background-image: url('../../img/teams-logo/T1.svg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -108,15 +108,15 @@ function Teams() {
       <Banner_container>
         <Seasons_selection>
           <Left_Buttons>
-            <img src="../img/Arrows_Left.svg" width={24} />
-            <img src="../img/Arrow_Left.svg" width={16} />
+            <img src="../../img/icon/Arrow/Arrows_Left.svg" width={24} />
+            <img src="../img/icon/Arrow/Arrow_Left.svg" width={16} />
           </Left_Buttons>
           {seasonData.map((data, index) => {
             return <SeasonButtonCell seasons={data} index={index} key={index} />;
           })}
           <Right_Buttons>
-            <img src="../img/Arrow_Right.svg" width={16} />
-            <img src="../img/Arrows_Right.svg" width={24} />
+            <img src="../../img/icon/Arrow/Arrow_Right.svg" width={16} />
+            <img src="../../img/icon/Arrow/Arrows_Right.svg" width={24} />
           </Right_Buttons>
         </Seasons_selection>
         <Banner_contents>
@@ -128,22 +128,22 @@ function Teams() {
               <span style={{ fontSize: 18, fontWeight: 500 }}>2021 SUMMER 정규시즌 00위 00승 - 00패</span>
               <Team_contact>
                 <SNS_Icon_Cell>
-                  <SNS_Icon_Image src="../img/Teamswebsite.svg" />
+                  <SNS_Icon_Image src="../img/sns/Teamswebsite.svg" />
                 </SNS_Icon_Cell>
                 <SNS_Icon_Cell>
-                  <SNS_Icon_Image src="../img/Twitch.svg" />
+                  <SNS_Icon_Image src="../img/sns/Twitch.svg" />
                 </SNS_Icon_Cell>
                 <SNS_Icon_Cell>
-                  <SNS_Icon_Image src="../img/Youtube.svg" />
+                  <SNS_Icon_Image src="../img/sns/Youtube.svg" />
                 </SNS_Icon_Cell>
                 <SNS_Icon_Cell>
-                  <SNS_Icon_Image src="../img/Instagram.svg" />
+                  <SNS_Icon_Image src="../img/sns/Instagram.svg" />
                 </SNS_Icon_Cell>
                 <SNS_Icon_Cell>
-                  <SNS_Icon_Image src="../img/Facebook.svg" />
+                  <SNS_Icon_Image src="../img/sns/Facebook.svg" />
                 </SNS_Icon_Cell>
                 <SNS_Icon_Cell>
-                  <SNS_Icon_Image src="../img/Twitter.svg" />
+                  <SNS_Icon_Image src="../img/sns/Twitter.svg" />
                 </SNS_Icon_Cell>
               </Team_contact>
             </Team_Info_Text>

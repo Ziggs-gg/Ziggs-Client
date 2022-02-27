@@ -6,9 +6,7 @@ import Schedule from './Schedule';
 import Data from '../../data.js';
 import axios from 'axios';
 
-
 function MainSchedule() {
-
   /*const [match, setmatch] = useState([]);
 
   useEffect( () => {
@@ -25,10 +23,10 @@ function MainSchedule() {
   },[]);*/
 
   let MainScheduleContain = styled.div`
-  width: 100%;
+    width: 100%;
   `;
 
-  let [match, matchchange] = useState(Data);
+  let [match, matchChange] = useState(Data);
 
   return (
     <MainScheduleContain>

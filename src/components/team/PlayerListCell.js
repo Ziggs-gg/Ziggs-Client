@@ -3,7 +3,7 @@ import '../../App.css';
 import styled from 'styled-components';
 function PlayerListCell() {
   let Container = styled.div`
-    background-image: url('../../img/T1_Canna.svg');
+    background-image: url('../../img/players/T1_Canna.svg');
     background-repeat: no-repeat;
     background-position: right bottom;
     width: 250px;
@@ -33,7 +33,7 @@ function PlayerListCell() {
   `;
   return (
     <Container>
-      <Position src="../img/Top.svg" />
+      <Position src="../img/position/Top.svg" />
       <Text_container>
         <Text_small>🇰🇷</Text_small>
         <Text_large>Canna</Text_large>
