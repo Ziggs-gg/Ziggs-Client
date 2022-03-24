@@ -8,7 +8,7 @@ import Teams from './components/team/Teams';
 import styled from 'styled-components';
 import Player from './components/player/Player';
 
-import MatchSummury from './components/schedule/MatchSummury';
+import MatchSummury from './components/schedule/matchResult/MatchSummury';
 
 import Compare from './components/compare/Compare';
 import axios from 'axios';

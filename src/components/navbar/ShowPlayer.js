@@ -1,4 +1,4 @@
-import {React,useState} from 'react';
+import { React, useState } from 'react';
 import '../../App.css';
 import styled from 'styled-components';
 import PlayerList from './PlayerList';
@@ -18,6 +18,7 @@ function ShowPlayer(props) {
   `;
   let Maintitle = styled.div`
     display: flex;
+    align-items: center;
     padding: 5px 0 0 25px;
     color: #ffffff;
     font-size: 18px;
@@ -30,8 +31,8 @@ function ShowPlayer(props) {
 
   let Close = styled.button`
     background: #131310;
-    margin-top: 10px;
-    margin-left: 132px;
+
+    margin-left: 112px;
     padding: 10px;
     height: 10%;
     border: none;
@@ -65,32 +66,32 @@ function ShowPlayer(props) {
   const [positionData, setpositionData] = useState(Position_Data);
 
   return (
-    <div className='navbar-contain'>
+    <div className="navbar-contain">
       <Maintitle>
         <Image>
-          <img src={require("../../img/icon/Players/Two-Tone.svg").default} />
+          <img src={require('../../img/icon/Players/Two-Tone.svg').default} />
         </Image>
         <Title>선수보기</Title>
         <Close
           onClick={() => {
             props.setmodalPlayer(false);
           }}>
-          <img src={require("../../img/icon/Arrow/Arrows.svg").default} />
+          <img src={require('../../img/icon/Arrow/Arrows.svg').default} />
         </Close>
       </Maintitle>
       <Subcontain>
-        {leagueData.map( league =>
-            <Click>
-              <img src={require(`../../img/league-logo/${league.name}_Logo.svg`).default} />
-            </Click>
-        )}
+        {leagueData.map((league) => (
+          <Click>
+            <img src={require(`../../img/league-logo/${league.name}_Logo.svg`).default} />
+          </Click>
+        ))}
       </Subcontain>
       <Subcontain>
-        {positionData.map( positions =>
-              <Click>
-                <img src={require(`../../img/position/${positions.position}.svg`).default} />
-              </Click>
-        )}
+        {positionData.map((positions) => (
+          <Click>
+            <img src={require(`../../img/position/${positions.position}.svg`).default} />
+          </Click>
+        ))}
       </Subcontain>
       <PlayerList />
     </div>

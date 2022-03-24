@@ -17,6 +17,7 @@ import { ReactComponent as SB } from '../../img/teams-logo/SB.svg';
 function ShowTeam(props) {
   let Maintitle = styled.div`
     display: flex;
+    align-items: center;
     padding: 5px 0 0 25px;
     color: #ffffff;
     font-size: 18px;
@@ -34,8 +35,8 @@ function ShowTeam(props) {
   `;
   let Close = styled.button`
     background: #131310;
-    margin-top: 10px;
-    margin-left: 132px;
+
+    margin-left: 112px;
     padding: 10px;
     height: 10%;
     border: none;

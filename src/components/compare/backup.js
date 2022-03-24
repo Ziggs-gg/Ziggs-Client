@@ -1,4 +1,4 @@
-import React, { useState} from 'react';
+import React, { useState } from 'react';
 import '../../App.css';
 import styled from 'styled-components';
 import PlayerList from './PlayerList';
@@ -7,7 +7,6 @@ import League_Data from '../../data/LeagueData.js';
 import Position_Data from '../../data/Position.js';
 
 function SoloCompare(props) {
-
   let SoloAndGroup = styled.div`
     display: flex;
     border: 0.5px solid #363634;
@@ -19,7 +18,7 @@ function SoloCompare(props) {
   `;
 
   let Solo = styled.button`
-    background: #C13631;
+    background: #c13631;
     border-radius: 30px;
     text-align: center;
     width: 57px;
@@ -46,7 +45,7 @@ function SoloCompare(props) {
 
   let Filter = styled.form`
     display: flex;
-    border-bottom: 0.5px solid #F3F3F3;
+    border-bottom: 0.5px solid #f3f3f3;
     opacity: 0.6;
     padding-bottom: 8px;
     margin-bottom: 16px;
@@ -113,24 +112,23 @@ function SoloCompare(props) {
     width: 100%;
   `;
 
-const [leagueData, setleagueData] = useState(League_Data);
-const [positionData, setpositionData] = useState(Position_Data);
+  const [leagueData, setleagueData] = useState(League_Data);
+  const [positionData, setpositionData] = useState(Position_Data);
 
-  return(
+  return (
     <div>
       <SoloAndGroup>
         <Solo
           onClick={() => {
-            props.setsolo(!props.solo)
-            props.setgroup(false)
-            
+            props.setsolo(!props.solo);
+            props.setgroup(false);
           }}>
           <IconImage src="../../img/icon/Players/Filled.svg" />
         </Solo>
         <Group
           onClick={() => {
-            props.setsolo(false)
-            props.setgroup(!props.group)
+            props.setsolo(false);
+            props.setgroup(!props.group);
           }}>
           <IconImage src="../../img/icon/Teams/Outlined.svg" />
         </Group>
@@ -147,14 +145,14 @@ const [positionData, setpositionData] = useState(Position_Data);
           <option value={'Summer'}>Summer</option>
         </SeasonSelect>
         <LeagueSelect>
-          {leagueData.map( league => 
+          {leagueData.map((league) => (
             <LeagueImage src={`../../img/league-logo/${league.name}_Logo.svg`} />
-            )}
+          ))}
         </LeagueSelect>
         <PositionSelect>
-          {positionData.map( position =>
+          {positionData.map((position) => (
             <PositionImage src={`../../img/position/${position.position}.svg`} />
-          )}
+          ))}
         </PositionSelect>
       </Filter>
       <PlayerListContain>
@@ -214,15 +212,33 @@ const [positionData, setpositionData] = useState(Position_Data);
         <PlayerListPicks />
         <PlayerListPicks />
       </PlayerListPicksContain>
-      <Btn color={color} onClick={onClick}><LeagueImage src='../../img/league-logo/LCK_Logo.svg' value='LCK' alt='LCK'/></Btn>
-          <Btn color={color} onClick={onClick}><LeagueImage src='../../img/league-logo/LPL_Logo.svg' value='LPL' alt='LPL'/></Btn>
-          <Btn color={color} onClick={onClick}><LeagueImage src='../../img/league-logo/LEC_Logo.svg' alt='LEC'/></Btn>
-          <Btn color={color} onClick={onClick}><LeagueImage src='../../img/league-logo/LCS_Logo.svg' alt='LCS'/></Btn>
-          <Btn color={color} onClick={onClick}><LeagueImage src='../../img/league-logo/CBLOL_Logo.svg' alt='CBLOL'/></Btn>
-          <Btn color={color} onClick={onClick}><LeagueImage src='../../img/league-logo/LCL_Logo.svg' alt='LCL'/></Btn>
-          <Btn color={color} onClick={onClick}><LeagueImage src='../../img/league-logo/LCO_Logo.svg' alt='LCO'/></Btn>
-          <Btn color={color} onClick={onClick}><LeagueImage src='../../img/league-logo/LJL_Logo.svg' alt='LJL'/></Btn>
-          <Btn color={color} onClick={onClick}><LeagueImage src='../../img/league-logo/LLA_Logo.svg' alt='LLA'/></Btn>
+      {/* <Btn color={color} onClick={onClick}>
+        <LeagueImage src="../../img/league-logo/LCK_Logo.svg" value="LCK" alt="LCK" />
+      </Btn>
+      <Btn color={color} onClick={onClick}>
+        <LeagueImage src="../../img/league-logo/LPL_Logo.svg" value="LPL" alt="LPL" />
+      </Btn>
+      <Btn color={color} onClick={onClick}>
+        <LeagueImage src="../../img/league-logo/LEC_Logo.svg" alt="LEC" />
+      </Btn>
+      <Btn color={color} onClick={onClick}>
+        <LeagueImage src="../../img/league-logo/LCS_Logo.svg" alt="LCS" />
+      </Btn>
+      <Btn color={color} onClick={onClick}>
+        <LeagueImage src="../../img/league-logo/CBLOL_Logo.svg" alt="CBLOL" />
+      </Btn>
+      <Btn color={color} onClick={onClick}>
+        <LeagueImage src="../../img/league-logo/LCL_Logo.svg" alt="LCL" />
+      </Btn>
+      <Btn color={color} onClick={onClick}>
+        <LeagueImage src="../../img/league-logo/LCO_Logo.svg" alt="LCO" />
+      </Btn>
+      <Btn color={color} onClick={onClick}>
+        <LeagueImage src="../../img/league-logo/LJL_Logo.svg" alt="LJL" />
+      </Btn>
+      <Btn color={color} onClick={onClick}>
+        <LeagueImage src="../../img/league-logo/LLA_Logo.svg" alt="LLA" />
+      </Btn> */}
     </div>
   );
 }

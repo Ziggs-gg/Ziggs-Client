@@ -1,7 +1,8 @@
 import React from 'react';
-import '../../App.css';
 import styled from 'styled-components';
-
+import PositionCell from './PositionCell';
+import GameObject from './gameObject/GameObject';
+import '../../../App.css';
 function MatchSummury() {
   let Banner = styled.div``;
   let Back = styled.img`
@@ -10,7 +11,7 @@ function MatchSummury() {
     width: 24px;
     height: 24px;
   `;
-  let Score_contain = styled.div`
+  let ScoreContain = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
@@ -21,7 +22,7 @@ function MatchSummury() {
     width: 114px;
     height: 114px;
   `;
-  let TeamLogo_contain = styled.div`
+  let TeamLogoContain = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -39,7 +40,7 @@ function MatchSummury() {
     font-weight: 900;
     text-align: center;
   `;
-  let Game_Selector = styled.div`
+  let GameSelector = styled.div`
     display: flex;
     justify-content: center;
     margin-top: 16px;
@@ -47,7 +48,7 @@ function MatchSummury() {
     height: 30px;
     border-bottom: solid 3px #838381;
   `;
-  let Game_select_button = styled.span`
+  let GameSelectButton = styled.span`
     width: 250px;
     font-size: 20px;
     font-weight: 900;
@@ -60,9 +61,8 @@ function MatchSummury() {
   let Content = styled.div`
     display: flex;
     justify-content: space-between;
+    flex-direction: row;
     margin-top: 1rem;
-    width: 100%;
-    height: auto;
   `;
   let BanPick = styled.div`
     width: 260px;
@@ -108,6 +108,7 @@ function MatchSummury() {
   let PositionSummury = styled.div`
     width: 260px;
     height: 134px;
+    margin-top: 16px;
     margin-bottom: 16px;
   `;
   let SideContentTitle = styled.span`
@@ -122,17 +123,10 @@ function MatchSummury() {
     border-left: solid 0.5px #838381;
   `;
   let GameData = styled.div`
-    width: auto;
+    width: 100%;
     height: auto;
   `;
-  let ObjectSummury = styled.div`
-    width: auto;
 
-    margin-bottom: 16px;
-  `;
-  let StatsDetail = styled.div`
-    width: auto;
-  `;
   let BanPickText = styled.span`
     font-size: 14px;
   `;
@@ -154,23 +148,23 @@ function MatchSummury() {
   return (
     <div className="main-contain">
       <Banner>
-        <Back src={require('../../img/icon/Arrow/Arrow_Left.svg').default} />
-        <Score_contain>
-          <TeamLogo_contain>
-            <TeamLogo src={require('../../img/teams-logo/T1.svg').default}></TeamLogo>
+        <Back src={require('../../../img/icon/Arrow/Arrow_Left.svg').default} />
+        <ScoreContain>
+          <TeamLogoContain>
+            <TeamLogo src={require('../../../img/teams-logo/T1.svg').default}></TeamLogo>
             <HomeTeamName>T1</HomeTeamName>
-          </TeamLogo_contain>
+          </TeamLogoContain>
           <Score>2 - 0</Score>
-          <TeamLogo_contain>
-            <TeamLogo src={require('../../img/teams-logo/DWG.svg').default}></TeamLogo>
+          <TeamLogoContain>
+            <TeamLogo src={require('../../../img/teams-logo/DWG.svg').default}></TeamLogo>
             <HomeTeamName>DWG</HomeTeamName>
-          </TeamLogo_contain>
-        </Score_contain>
+          </TeamLogoContain>
+        </ScoreContain>
       </Banner>
-      <Game_Selector>
-        <Game_select_button>GAME 1</Game_select_button>
-        <Game_select_button>GAME 2</Game_select_button>
-      </Game_Selector>
+      <GameSelector>
+        <GameSelectButton>GAME 1</GameSelectButton>
+        <GameSelectButton>GAME 2</GameSelectButton>
+      </GameSelector>
       <Content>
         <BanPick>
           <SideContentTitle>픽 & 밴</SideContentTitle>
@@ -232,16 +226,25 @@ function MatchSummury() {
           </BanPickPhase2Container>
         </BanPick>
         <GameData>
-          <ObjectSummury></ObjectSummury>
-          <StatsDetail></StatsDetail>
+          <GameObject />
         </GameData>
         <Summury>
           <SideContentTitle>요약</SideContentTitle>
-          <PositionSummury></PositionSummury>
-          <PositionSummury></PositionSummury>
-          <PositionSummury></PositionSummury>
-          <PositionSummury></PositionSummury>
-          <PositionSummury></PositionSummury>
+          <PositionSummury>
+            <PositionCell />
+          </PositionSummury>
+          <PositionSummury>
+            <PositionCell />
+          </PositionSummury>
+          <PositionSummury>
+            <PositionCell />
+          </PositionSummury>
+          <PositionSummury>
+            <PositionCell />
+          </PositionSummury>
+          <PositionSummury>
+            <PositionCell />
+          </PositionSummury>
         </Summury>
       </Content>
     </div>

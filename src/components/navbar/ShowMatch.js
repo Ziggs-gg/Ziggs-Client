@@ -15,6 +15,7 @@ function ShowMatch(props) {
   `;
   let Maintitle = styled.div`
     display: flex;
+    align-items: center;
     padding: 5px 0 0 25px;
     color: #ffffff;
     font-size: 18px;
@@ -27,8 +28,7 @@ function ShowMatch(props) {
 
   let Close = styled.button`
     background: #131310;
-    margin-top: 10px;
-    margin-left: 132px;
+    margin-left: 112px;
     padding: 10px;
     height: 10%;
     border: none;
@@ -53,7 +53,7 @@ function ShowMatch(props) {
     <div className="navbar-contain">
       <Maintitle>
         <Image>
-          <img src={require('../../img/icon/Schedule/Two-Tone.svg').default} />
+          <img alt="ScheduleIcon" src={require('../../img/icon/Schedule/Two-Tone.svg').default} />
         </Image>
         <Title>경기일정</Title>
         <Close
@@ -82,7 +82,7 @@ function ShowMatch(props) {
       <Leaguetitle>국제대회</Leaguetitle>
       {worldLeague.map((data, index) => {
         return (
-          <Link key={index} key={index} to={'/match/' + data.name}>
+          <Link key={index} to={'/match/' + data.name}>
             <SubNabBarCell_League leagues={data} key={index} />
           </Link>
         );

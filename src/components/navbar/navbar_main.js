@@ -16,7 +16,7 @@ import Player from '../../img/icon/Players/Two-Tone.svg';
 let Navbar = styled.div`
   display: flex;
 `;
-let Navbar_container = styled.div`
+let NavbarContainer = styled.div`
   position: --webkit-sticky;
   position: sticky;
   top: 0;
@@ -31,7 +31,7 @@ let Title = styled.div`
   align-items: center;
   padding-top: 20px;
 `;
-let Title_text = styled.span`
+let TitleText = styled.span`
   padding-top: 5px;
   height: 100%;
   font-size: 22px;
@@ -44,7 +44,7 @@ let Logo = styled.img`
   width: 32px;
   height: 32px;
 `;
-let Search_bar_container = styled.div`
+let SearchBarContainer = styled.div`
   background-color: #363634;
   display: inline-block;
   width: 216px;
@@ -53,13 +53,13 @@ let Search_bar_container = styled.div`
   margin-top: 30px;
   margin-left: 24px;
 `;
-let Search_bar_form = styled.form``;
-let Search_bar = styled.div`
+let SearchBarForm = styled.form``;
+let SearchBar = styled.div`
   display: flex;
   justify-content: center;
   margin-top: 5px;
 `;
-let Search_bar_input = styled.input`
+let SearchBarInput = styled.input`
   background: none;
   border: none;
   width: 117px;
@@ -99,7 +99,7 @@ let List_item = styled.li`
     border-left: 4px solid red;
   }
 `;
-let List_item_text = styled.span`
+let ListItemText = styled.span`
   font-size: 18px;
   margin-left: 7px;
   font-family: Noto Sans KR;
@@ -115,7 +115,7 @@ let Subnavbar2 = styled.div`
   text-align: center;
 `;
 
-let Schedule_icon = styled(Schedule)`
+let ScheduleIcon = styled(Schedule)`
   path,
   rect {
     stroke: #f3f3f3;
@@ -123,11 +123,6 @@ let Schedule_icon = styled(Schedule)`
 `;
 
 function NavbarMain(props) {
-  const loc = useLocation();
-
-  useEffect(() => {
-    console.log(loc);
-  });
   let [modalMatch, setmodalMatch] = useState(false);
   let [modalLeague, setmodalLeague] = useState(false);
   let [modalTeam, setmodalTeam] = useState(false);
@@ -135,21 +130,21 @@ function NavbarMain(props) {
 
   return (
     <Navbar>
-      <Navbar_container>
+      <NavbarContainer>
         <a href="/">
           <Title>
             <Logo src={Ziggs_Logo} />
-            <Title_text>ZIGGS.GG</Title_text>
+            <TitleText>ZIGGS.GG</TitleText>
           </Title>
         </a>
-        <Search_bar_container>
-          <Search_bar_form action="">
-            <Search_bar className="search-bar">
+        <SearchBarContainer>
+          <SearchBarForm action="">
+            <SearchBar className="search-bar">
               <img src={Searching} alt="" />
-              <Search_bar_input type="text" placeholder="검색어를 입력해주세요." />
-            </Search_bar>
-          </Search_bar_form>
-        </Search_bar_container>
+              <SearchBarInput type="text" placeholder="검색어를 입력해주세요." />
+            </SearchBar>
+          </SearchBarForm>
+        </SearchBarContainer>
         <List>
           <List_item
             onClick={() => {
@@ -158,8 +153,8 @@ function NavbarMain(props) {
               setmodalTeam(false);
               setmodalPlayer(false);
             }}>
-            <Schedule_icon />
-            <List_item_text>경기일정</List_item_text>
+            <ScheduleIcon />
+            <ListItemText>경기일정</ListItemText>
           </List_item>
           <Link to="/compare">
             <List_item
@@ -170,7 +165,7 @@ function NavbarMain(props) {
                 setmodalPlayer(false);
               }}>
               <img src={Compare} />
-              <List_item_text>통계비교</List_item_text>
+              <ListItemText>통계비교</ListItemText>
             </List_item>
           </Link>
           <List_item
@@ -181,7 +176,7 @@ function NavbarMain(props) {
               setmodalPlayer(false);
             }}>
             <img src={Leagues} />
-            <List_item_text>리그보기</List_item_text>
+            <ListItemText>리그보기</ListItemText>
           </List_item>
           <List_item
             onClick={() => {
@@ -191,7 +186,7 @@ function NavbarMain(props) {
               setmodalPlayer(false);
             }}>
             <img src={Teams} />
-            <List_item_text>구단보기</List_item_text>
+            <ListItemText>구단보기</ListItemText>
           </List_item>
           <List_item
             onClick={() => {
@@ -201,10 +196,10 @@ function NavbarMain(props) {
               setmodalPlayer(!modalPlayer);
             }}>
             <img src={Player} />
-            <List_item_text>선수보기</List_item_text>
+            <ListItemText>선수보기</ListItemText>
           </List_item>
         </List>
-      </Navbar_container>
+      </NavbarContainer>
       {modalMatch == true ? <ShowMatch setmodalMatch={setmodalMatch} /> : null}
       {modalLeague == true ? <ShowLeague setmodalLeague={setmodalLeague} /> : null}
       {modalTeam == true ? <ShowTeam setmodalTeam={setmodalTeam} /> : null}
